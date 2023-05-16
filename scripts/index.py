@@ -277,29 +277,29 @@ ALL_ROUND_CONSTANTS = [
 INDENT = '    '
 
 
-# def loop_each_c(c, prefix=''):
-#     r = 1
-#     tmp = prefix + \
-#         f'if (r == {r}) return {FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1]};'
-#     for r in range(2, 12):
-#         tmp += prefix + \
-#             f'else if (r == {r}) return {FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1]};'
+def loop_each_c(c, prefix=''):
+    r = 1
+    tmp = prefix + \
+        f'if (r == {r}) return {FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1]};'
+    for r in range(2, 12):
+        tmp += prefix + \
+            f'else if (r == {r}) return {FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1]};'
 
-#     return tmp
+    return tmp
 
 
-# def make_function_inner(prefix=''):
-#     c = 1
-#     tmp = prefix + f'if (c == {c}) ' + '{' \
-#         + loop_each_c(c, prefix=prefix + INDENT)
-#     for c in range(2, 12):
-#         tmp += prefix + '} ' + f'else if (c == {c})' + ' {' \
-#             + loop_each_c(c, prefix=prefix + INDENT)
+def make_get_fast_partial_round_initial_matrix_inner(prefix=''):
+    c = 1
+    tmp = prefix + f'if (c == {c}) ' + '{' \
+        + loop_each_c(c, prefix=prefix + INDENT)
+    for c in range(2, 12):
+        tmp += prefix + '} ' + f'else if (c == {c})' + ' {' \
+            + loop_each_c(c, prefix=prefix + INDENT)
 
-#     tmp += prefix + '}' \
-#         + prefix + 'revert("illegal argument");'
+    tmp += prefix + '}' \
+        + prefix + 'revert("illegal argument");'
 
-#     return tmp
+    return tmp
 
 
 # def loop_mds_partial_layer_init_for_c
@@ -346,21 +346,19 @@ def make_all_round_constants(prefix=''):
 
 def make_get_fast_partial_round_initial_matrix(prefix=''):
     tmp = prefix + 'function getFastPartialRoundInitialMatrix(uint256 r, uint256 c) private pure returns (uint256 x) {' \
-        + make_function_inner(prefix=prefix + INDENT) \
+        + make_get_fast_partial_round_initial_matrix_inner(prefix=prefix + INDENT) \
         + prefix + '}'
 
     return tmp
 
 
-# state = _partial_first_constant_layer(state);
-# state = _mds_partial_layer_init(state);
+# state = _mds_partial_layer_init(_partial_first_constant_layer(state));
 # for (uint256 i = 0; i < N_PARTIAL_ROUNDS; i++) {
 #     state[0] = _sbox_monomial(state[0]) + FAST_PARTIAL_ROUND_CONSTANTS[i];
 #     state = _mds_partial_layer_fast(state, i);
 # }
 def make_partial_rounds_inner(prefix=''):
-    tmp = prefix + 'state = _partial_first_constant_layer(state);' \
-        + prefix + 'state = _mds_partial_layer_init(state);'
+    tmp = prefix + 'state = _mds_partial_layer_init(_partial_first_constant_layer(state));'
     for i in range(0, 22):
         tmp += prefix + f'state[0] = _sbox_monomial(state[0]) + {FAST_PARTIAL_ROUND_CONSTANTS[i]};' \
             + prefix + f'state = _mds_partial_layer_fast(state, {i});'
@@ -376,11 +374,25 @@ def make_partial_rounds(prefix=''):
 
     return tmp
 
+# for (uint256 i = 0; i < 12; i++) {
+#     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i];
+# }
+def make_mds_row_shf_inner(r, prefix=''):
+    i = 0
+    tmp = prefix + f'res = state[{(r + i) % 12}] * MDS_MATRIX_CIRC_{i}'
+    for i in range(1, 12):
+        tmp += prefix + INDENT + \
+            f'+ state[{(r + i) % 12}] * MDS_MATRIX_CIRC_{i}'
+
+    tmp += ';'
+
+    return tmp
+
 
 if __name__ == '__main__':
     # tmp = make_get_fast_partial_round_initial_matrix(prefix='\n' + INDENT) + '\n'
     # tmp = make_mds_partial_layer_init_inner(prefix='\n' + INDENT + INDENT) + '\n'
     # tmp = make_all_round_constants(prefix='\n' + INDENT) + '\n'
-    tmp = make_partial_rounds(prefix='\n' + INDENT) + '\n'
-
-    print(tmp)
+    # tmp = make_partial_rounds(prefix='\n' + INDENT) + '\n'
+    tmp = make_mds_row_shf_inner(
+        11, prefix='\n' + INDENT + INDENT + INDENT) + '\n'

@@ -58,35 +58,292 @@ contract Poseidon {
         }
     }
 
-    // `v[r]` allows 192 bits number.
+    // `state[r]` allows 192 bits number.
     // `res` is 200 bits number.
-    // 1118 ~ 1180 gas
-    function _mds_row_shf(
-        uint256 r,
-        uint256[WIDTH] memory v
+    function _mds_row_shf_0(
+        uint256[WIDTH] memory state
     ) internal pure returns (uint256 res) {
-        // uint256 res = 0;
         unchecked {
             // for (uint256 i = 0; i < 12; i++) {
-            //     res += v[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
             // }
-            res += v[r] * MDS_MATRIX_CIRC_0;
-            res += v[(r + 1) % WIDTH] * MDS_MATRIX_CIRC_1;
-            res += v[(r + 2) % WIDTH] * MDS_MATRIX_CIRC_2;
-            res += v[(r + 3) % WIDTH] * MDS_MATRIX_CIRC_3;
-            res += v[(r + 4) % WIDTH] * MDS_MATRIX_CIRC_4;
-            res += v[(r + 5) % WIDTH] * MDS_MATRIX_CIRC_5;
-            res += v[(r + 6) % WIDTH] * MDS_MATRIX_CIRC_6;
-            res += v[(r + 7) % WIDTH] * MDS_MATRIX_CIRC_7;
-            res += v[(r + 8) % WIDTH] * MDS_MATRIX_CIRC_8;
-            res += v[(r + 9) % WIDTH] * MDS_MATRIX_CIRC_9;
-            res += v[(r + 10) % WIDTH] * MDS_MATRIX_CIRC_10;
-            res += v[(r + 11) % WIDTH] * MDS_MATRIX_CIRC_11;
+            // res = add(res, state[r] * MDS_MATRIX_DIAG[r]); // 200 bits
+            res = state[1] * MDS_MATRIX_CIRC_1
+                + state[2] * MDS_MATRIX_CIRC_2
+                + state[3] * MDS_MATRIX_CIRC_3
+                + state[4] * MDS_MATRIX_CIRC_4
+                + state[5] * MDS_MATRIX_CIRC_5
+                + state[6] * MDS_MATRIX_CIRC_6
+                + state[7] * MDS_MATRIX_CIRC_7
+                + state[8] * MDS_MATRIX_CIRC_8
+                + state[9] * MDS_MATRIX_CIRC_9
+                + state[10] * MDS_MATRIX_CIRC_10
+                + state[11] * MDS_MATRIX_CIRC_11
+                + state[0] * (MDS_MATRIX_CIRC_0 + MDS_MATRIX_DIAG_0);
+        }
+    }
 
-            // res = add(res, v[r] * MDS_MATRIX_DIAG[r]);
-            if (r == 0) {
-                res += v[0] * MDS_MATRIX_DIAG_0; // 200 bits
-            }
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_1(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[1] * MDS_MATRIX_CIRC_0
+                + state[2] * MDS_MATRIX_CIRC_1
+                + state[3] * MDS_MATRIX_CIRC_2
+                + state[4] * MDS_MATRIX_CIRC_3
+                + state[5] * MDS_MATRIX_CIRC_4
+                + state[6] * MDS_MATRIX_CIRC_5
+                + state[7] * MDS_MATRIX_CIRC_6
+                + state[8] * MDS_MATRIX_CIRC_7
+                + state[9] * MDS_MATRIX_CIRC_8
+                + state[10] * MDS_MATRIX_CIRC_9
+                + state[11] * MDS_MATRIX_CIRC_10
+                + state[0] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_2(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[2] * MDS_MATRIX_CIRC_0
+                + state[3] * MDS_MATRIX_CIRC_1
+                + state[4] * MDS_MATRIX_CIRC_2
+                + state[5] * MDS_MATRIX_CIRC_3
+                + state[6] * MDS_MATRIX_CIRC_4
+                + state[7] * MDS_MATRIX_CIRC_5
+                + state[8] * MDS_MATRIX_CIRC_6
+                + state[9] * MDS_MATRIX_CIRC_7
+                + state[10] * MDS_MATRIX_CIRC_8
+                + state[11] * MDS_MATRIX_CIRC_9
+                + state[0] * MDS_MATRIX_CIRC_10
+                + state[1] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_3(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[3] * MDS_MATRIX_CIRC_0
+                + state[4] * MDS_MATRIX_CIRC_1
+                + state[5] * MDS_MATRIX_CIRC_2
+                + state[6] * MDS_MATRIX_CIRC_3
+                + state[7] * MDS_MATRIX_CIRC_4
+                + state[8] * MDS_MATRIX_CIRC_5
+                + state[9] * MDS_MATRIX_CIRC_6
+                + state[10] * MDS_MATRIX_CIRC_7
+                + state[11] * MDS_MATRIX_CIRC_8
+                + state[0] * MDS_MATRIX_CIRC_9
+                + state[1] * MDS_MATRIX_CIRC_10
+                + state[2] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_4(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[4] * MDS_MATRIX_CIRC_0
+                + state[5] * MDS_MATRIX_CIRC_1
+                + state[6] * MDS_MATRIX_CIRC_2
+                + state[7] * MDS_MATRIX_CIRC_3
+                + state[8] * MDS_MATRIX_CIRC_4
+                + state[9] * MDS_MATRIX_CIRC_5
+                + state[10] * MDS_MATRIX_CIRC_6
+                + state[11] * MDS_MATRIX_CIRC_7
+                + state[0] * MDS_MATRIX_CIRC_8
+                + state[1] * MDS_MATRIX_CIRC_9
+                + state[2] * MDS_MATRIX_CIRC_10
+                + state[3] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_5(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[5] * MDS_MATRIX_CIRC_0
+                + state[6] * MDS_MATRIX_CIRC_1
+                + state[7] * MDS_MATRIX_CIRC_2
+                + state[8] * MDS_MATRIX_CIRC_3
+                + state[9] * MDS_MATRIX_CIRC_4
+                + state[10] * MDS_MATRIX_CIRC_5
+                + state[11] * MDS_MATRIX_CIRC_6
+                + state[0] * MDS_MATRIX_CIRC_7
+                + state[1] * MDS_MATRIX_CIRC_8
+                + state[2] * MDS_MATRIX_CIRC_9
+                + state[3] * MDS_MATRIX_CIRC_10
+                + state[4] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_6(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[6] * MDS_MATRIX_CIRC_0
+                + state[7] * MDS_MATRIX_CIRC_1
+                + state[8] * MDS_MATRIX_CIRC_2
+                + state[9] * MDS_MATRIX_CIRC_3
+                + state[10] * MDS_MATRIX_CIRC_4
+                + state[11] * MDS_MATRIX_CIRC_5
+                + state[0] * MDS_MATRIX_CIRC_6
+                + state[1] * MDS_MATRIX_CIRC_7
+                + state[2] * MDS_MATRIX_CIRC_8
+                + state[3] * MDS_MATRIX_CIRC_9
+                + state[4] * MDS_MATRIX_CIRC_10
+                + state[5] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_7(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[7] * MDS_MATRIX_CIRC_0
+                + state[8] * MDS_MATRIX_CIRC_1
+                + state[9] * MDS_MATRIX_CIRC_2
+                + state[10] * MDS_MATRIX_CIRC_3
+                + state[11] * MDS_MATRIX_CIRC_4
+                + state[0] * MDS_MATRIX_CIRC_5
+                + state[1] * MDS_MATRIX_CIRC_6
+                + state[2] * MDS_MATRIX_CIRC_7
+                + state[3] * MDS_MATRIX_CIRC_8
+                + state[4] * MDS_MATRIX_CIRC_9
+                + state[5] * MDS_MATRIX_CIRC_10
+                + state[6] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_8(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[8] * MDS_MATRIX_CIRC_0
+                + state[9] * MDS_MATRIX_CIRC_1
+                + state[10] * MDS_MATRIX_CIRC_2
+                + state[11] * MDS_MATRIX_CIRC_3
+                + state[0] * MDS_MATRIX_CIRC_4
+                + state[1] * MDS_MATRIX_CIRC_5
+                + state[2] * MDS_MATRIX_CIRC_6
+                + state[3] * MDS_MATRIX_CIRC_7
+                + state[4] * MDS_MATRIX_CIRC_8
+                + state[5] * MDS_MATRIX_CIRC_9
+                + state[6] * MDS_MATRIX_CIRC_10
+                + state[7] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_9(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[9] * MDS_MATRIX_CIRC_0
+                + state[10] * MDS_MATRIX_CIRC_1
+                + state[11] * MDS_MATRIX_CIRC_2
+                + state[0] * MDS_MATRIX_CIRC_3
+                + state[1] * MDS_MATRIX_CIRC_4
+                + state[2] * MDS_MATRIX_CIRC_5
+                + state[3] * MDS_MATRIX_CIRC_6
+                + state[4] * MDS_MATRIX_CIRC_7
+                + state[5] * MDS_MATRIX_CIRC_8
+                + state[6] * MDS_MATRIX_CIRC_9
+                + state[7] * MDS_MATRIX_CIRC_10
+                + state[8] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_10(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[10] * MDS_MATRIX_CIRC_0
+                + state[11] * MDS_MATRIX_CIRC_1
+                + state[0] * MDS_MATRIX_CIRC_2
+                + state[1] * MDS_MATRIX_CIRC_3
+                + state[2] * MDS_MATRIX_CIRC_4
+                + state[3] * MDS_MATRIX_CIRC_5
+                + state[4] * MDS_MATRIX_CIRC_6
+                + state[5] * MDS_MATRIX_CIRC_7
+                + state[6] * MDS_MATRIX_CIRC_8
+                + state[7] * MDS_MATRIX_CIRC_9
+                + state[8] * MDS_MATRIX_CIRC_10
+                + state[9] * MDS_MATRIX_CIRC_11;
+        }
+    }
+
+    // `state[r]` allows 192 bits number.
+    // `res` is 200 bits number.
+    function _mds_row_shf_11(
+        uint256[WIDTH] memory state
+    ) internal pure returns (uint256 res) {
+        unchecked {
+            // for (uint256 i = 0; i < 12; i++) {
+            //     res += state[(i + r) % WIDTH] * MDS_MATRIX_CIRC[i]; // (192 + 8) bits
+            // }
+            res = state[11] * MDS_MATRIX_CIRC_0
+                + state[0] * MDS_MATRIX_CIRC_1
+                + state[1] * MDS_MATRIX_CIRC_2
+                + state[2] * MDS_MATRIX_CIRC_3
+                + state[3] * MDS_MATRIX_CIRC_4
+                + state[4] * MDS_MATRIX_CIRC_5
+                + state[5] * MDS_MATRIX_CIRC_6
+                + state[6] * MDS_MATRIX_CIRC_7
+                + state[7] * MDS_MATRIX_CIRC_8
+                + state[8] * MDS_MATRIX_CIRC_9
+                + state[9] * MDS_MATRIX_CIRC_10
+                + state[10] * MDS_MATRIX_CIRC_11;
         }
     }
 
@@ -94,7 +351,7 @@ contract Poseidon {
         uint256[WIDTH] memory state
     ) internal pure returns (uint256[WIDTH] memory new_state) {
         new_state[0] = state[0];
-        
+
         // for (uint256 c = 1; c < WIDTH; c++) {
         //     for (uint256 r = 0; r < WIDTH; r++) {
         //         new_state[c] += state[r] * FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1];
@@ -949,41 +1206,39 @@ contract Poseidon {
     function _mds_sbox_layer(
         uint256[WIDTH] memory state
     ) internal pure returns (uint256[WIDTH] memory new_state) {
-        unchecked {
-            // _sbox_layer
-            // for (uint256 i = 0; i < 12; i++) {
-            //     state[i] = _sbox_monomial(state[i]);
-            // }
-            state[0] = _sbox_monomial(state[0]);
-            state[1] = _sbox_monomial(state[1]);
-            state[2] = _sbox_monomial(state[2]);
-            state[3] = _sbox_monomial(state[3]);
-            state[4] = _sbox_monomial(state[4]);
-            state[5] = _sbox_monomial(state[5]);
-            state[6] = _sbox_monomial(state[6]);
-            state[7] = _sbox_monomial(state[7]);
-            state[8] = _sbox_monomial(state[8]);
-            state[9] = _sbox_monomial(state[9]);
-            state[10] = _sbox_monomial(state[10]);
-            state[11] = _sbox_monomial(state[11]);
+        // _sbox_layer
+        // for (uint256 i = 0; i < 12; i++) {
+        //     state[i] = _sbox_monomial(state[i]);
+        // }
+        state[0] = _sbox_monomial(state[0]);
+        state[1] = _sbox_monomial(state[1]);
+        state[2] = _sbox_monomial(state[2]);
+        state[3] = _sbox_monomial(state[3]);
+        state[4] = _sbox_monomial(state[4]);
+        state[5] = _sbox_monomial(state[5]);
+        state[6] = _sbox_monomial(state[6]);
+        state[7] = _sbox_monomial(state[7]);
+        state[8] = _sbox_monomial(state[8]);
+        state[9] = _sbox_monomial(state[9]);
+        state[10] = _sbox_monomial(state[10]);
+        state[11] = _sbox_monomial(state[11]);
 
-            // _mds_layer
-            // for (uint256 r = 0; r < 12; r++) {
-            //     new_state[r] = _mds_row_shf(r, state);
-            // }
-            new_state[0] = _mds_row_shf(0, state);
-            new_state[1] = _mds_row_shf(1, state);
-            new_state[2] = _mds_row_shf(2, state);
-            new_state[3] = _mds_row_shf(3, state);
-            new_state[4] = _mds_row_shf(4, state);
-            new_state[5] = _mds_row_shf(5, state);
-            new_state[6] = _mds_row_shf(6, state);
-            new_state[7] = _mds_row_shf(7, state);
-            new_state[8] = _mds_row_shf(8, state);
-            new_state[9] = _mds_row_shf(9, state);
-            new_state[10] = _mds_row_shf(10, state);
-            new_state[11] = _mds_row_shf(11, state);
-        }
+        // _mds_layer
+        // for (uint256 r = 0; r < 12; r++) {
+        //     new_state[r] = _mds_row_shf(r, state);
+        // }
+        new_state[0] = _mds_row_shf_0(state);
+        new_state[1] = _mds_row_shf_1(state);
+        new_state[2] = _mds_row_shf_2(state);
+        new_state[3] = _mds_row_shf_3(state);
+        new_state[4] = _mds_row_shf_4(state);
+        new_state[5] = _mds_row_shf_5(state);
+        new_state[6] = _mds_row_shf_6(state);
+        new_state[7] = _mds_row_shf_7(state);
+        new_state[8] = _mds_row_shf_8(state);
+        new_state[9] = _mds_row_shf_9(state);
+        new_state[10] = _mds_row_shf_10(state);
+        new_state[11] = _mds_row_shf_11(state);
     }
 
     function _permute(
