@@ -54,6 +54,7 @@ contract Poseidon {
         0xe17653a29da578a1,
         0xc54302f225db2c76,
         0x86287821f722c881,
+
         0x59cd1a8a41c18e55,
         0xc3b919ad495dc574,
         0xa484c4c5ef6a0781,
@@ -61,7 +62,9 @@ contract Poseidon {
         0x6e4a40c18f30c09c,
         0x9a2eedb70d8f8cfa,
         0xe360c6e0ae486f38,
-        0xd5c7718fbfc647fb,
+        0xd5c7718fbfc647fb, //20
+
+
         0xc35eae071903ff0b,
         0x849c2656969c4be7,
         0xc0572c8c08cbbbad,
@@ -71,7 +74,9 @@ contract Poseidon {
         0x8297132b32825daf,
         0xad6805e0e30b2c8a,
         0xac51d9f5fcf8535e,
-        0x502ad7dc18c2ad87,
+        0x502ad7dc18c2ad87, // 30
+
+
         0x57a1550c110b3041,
         0x66bbd30e6ce0e583,
         0x0da2abef589d644e,
@@ -81,7 +86,8 @@ contract Poseidon {
         0x70e741ebfee96586,
         0x019d5ee2af82ec1c,
         0x6f6f2ed772466352,
-        0x7cf416cfe7e14ca1,
+        0x7cf416cfe7e14ca1, // 40
+
         0x61df517b86a46439,
         0x85dc499b11d77b75,
         0x4b959b48b9c10733,
@@ -91,7 +97,9 @@ contract Poseidon {
         0xa637093ecb2ad631,
         0x3cc3f892184df408,
         0x2e479dc157bf31bb,
-        0x6f49de07a6234346,
+        0x6f49de07a6234346, // 50
+
+
         0x213ce7bede378d7b,
         0x5b0431345d4dea83,
         0xa2de45780344d6a1,
@@ -101,7 +109,10 @@ contract Poseidon {
         0x27f8ec88bb21b1a3,
         0xfceb4fda1ded0893,
         0xfac6ff1346a41675,
-        0x7131aa45268d7d8c,
+        0x7131aa45268d7d8c, // 60
+
+
+
         0x9351036095630f9f,
         0xad535b24afc26bfb,
         0x4627f5c6993e44be,
@@ -111,7 +122,9 @@ contract Poseidon {
         0x3737e9db4c4f474d,
         0xe7ea5e33e75fffb6,
         0x90dee49fc9bfc23a,
-        0xd1b1edf76bc09c92,
+        0xd1b1edf76bc09c92, // 70
+
+
         0x0b65481ba645c602,
         0x99ad1aab0814283b,
         0x438a7c91d416ca4d,
@@ -121,7 +134,9 @@ contract Poseidon {
         0x5e7b329c1ed4ad71,
         0x5fc0ac0800144885,
         0x32db829239774eca,
-        0x0ade699c5830f310,
+        0x0ade699c5830f310, // 80
+
+
         0x7cc5583b10415f21,
         0x85df9ed2e166d64f,
         0x6604df4fee32bcb1,
@@ -131,7 +146,9 @@ contract Poseidon {
         0xa93f485c96f37b89,
         0x6704e8ee8f18d563,
         0xcee3e9ac1e072119,
-        0x510d0e65e2b470c1,
+        0x510d0e65e2b470c1, // 90
+
+
         0xf6323f486b9038f0,
         0x0b508cdeffa5ceef,
         0xf2417089e4fb3cbd,
@@ -140,7 +157,9 @@ contract Poseidon {
         0x7159cd30c3ac118e,
         0x839b4e8fafead540,
         0x0d3f3e5e82920adc,
-        0x8f7d83bddee7bba8,
+        0x8f7d83bddee7bba8, // 99
+
+
         0x780f2243ea071d06,
         0xeb915845f3de1634,
         0xd19e120d26b6f386,
@@ -150,7 +169,9 @@ contract Poseidon {
         0x9c22190be7f74732,
         0x5d693c1ba3ba3621,
         0xdcef0797c2b69ec7,
-        0x3d639263da827b13,
+        0x3d639263da827b13,// 109
+
+
         0xe273fd971bc8d0e7,
         0x418f02702d227ed5,
         0x8c25fda3b503038c,
@@ -160,7 +181,9 @@ contract Poseidon {
         0x635b337ee819dab5,
         0x9f9a036ed4f2d49f,
         0xb93e260cae5c170e,
-        0xb0a7eae879ddb76d,
+        0xb0a7eae879ddb76d, // 119
+
+
         0xd0762cbc8ca6570c,
         0x34c6efb812b04bf5,
         0x40bf0ab5fa14c112,
@@ -170,7 +193,9 @@ contract Poseidon {
         0x8722e0ace9d1be22,
         0x788ee3b37e5680fb,
         0x14a726661551e284,
-        0x98b7672f9ef3b419,
+        0x98b7672f9ef3b419, //129
+
+
         0xbb93ae776bb30e3a,
         0x28fd3b046380f850,
         0x30a4680593258387,
@@ -180,7 +205,8 @@ contract Poseidon {
         0xc1e434bedeefd767,
         0x0299351a53b8ec22,
         0xb2d456e4ad251b80,
-        0x3e9ed1fda49cea0b,
+        0x3e9ed1fda49cea0b, // 139
+
         0x2972a92ba450bed8,
         0x20216dd77be493de,
         0xadffe8cf28449ec6,
@@ -190,7 +216,9 @@ contract Poseidon {
         0x2300e5d6baedf0fb,
         0x2f63aa8647e15104,
         0xf1c36ce86ecec269,
-        0x27181125183970c9,
+        0x27181125183970c9, // 149
+
+
         0xe584029370dca96d,
         0x4d9bbc3e02f1cfb2,
         0xea35bc29692af6f8,
@@ -200,7 +228,8 @@ contract Poseidon {
         0x5a3f1bb1c53a9645,
         0xdb7f023869fb8d38,
         0xb462065911d4e1fc,
-        0x49c24ae4437d8030,
+        0x49c24ae4437d8030, // 159
+
         0xd793862c112b0566,
         0xaadd1106730d8feb,
         0xc43b6e0e97b0d568,
@@ -476,13 +505,13 @@ contract Poseidon {
             for (uint256 r = 1; r < 12; r++) {
                 for (uint256 c = 1; c < 12; c++) {
                     // new_state[c] = new_state[c] + state[r] * FAST_PARTIAL_ROUND_INITIAL_MATRIX[r - 1][c - 1];
-                    new_state[c] = new_state[c] + state[r] * getFastPartialRoundInitialMatrix(r - 1, c - 1);
+                    new_state[c] = new_state[c] + state[r] * _get_fast_partial_round_initial_matrix(r - 1, c - 1);
                 }
             }
         }
     }
 
-    function getFastPartialRoundInitialMatrix(uint256 r, uint256 c) private view returns (uint256) {
+    function _get_fast_partial_round_initial_matrix(uint256 r, uint256 c) private view returns (uint256) {
         if(r == 0){
             if (c == 0){
                 return 0x80772dc2645b280b;
@@ -1356,20 +1385,446 @@ contract Poseidon {
             //     new_state[i] = add(state[i], ALL_ROUND_CONSTANTS[i + WIDTH * round_ctr]);
             // }
             uint256 base_index = WIDTH * round_ctr;
-            new_state[0] = add(state[0], ALL_ROUND_CONSTANTS[base_index]);
-            new_state[1] = add(state[1], ALL_ROUND_CONSTANTS[base_index + 1]);
-            new_state[2] = add(state[2], ALL_ROUND_CONSTANTS[base_index + 2]);
-            new_state[3] = add(state[3], ALL_ROUND_CONSTANTS[base_index + 3]);
-            new_state[4] = add(state[4], ALL_ROUND_CONSTANTS[base_index + 4]);
-            new_state[5] = add(state[5], ALL_ROUND_CONSTANTS[base_index + 5]);
-            new_state[6] = add(state[6], ALL_ROUND_CONSTANTS[base_index + 6]);
-            new_state[7] = add(state[7], ALL_ROUND_CONSTANTS[base_index + 7]);
-            new_state[8] = add(state[8], ALL_ROUND_CONSTANTS[base_index + 8]);
-            new_state[9] = add(state[9], ALL_ROUND_CONSTANTS[base_index + 9]);
-            new_state[10] = add(state[10], ALL_ROUND_CONSTANTS[base_index + 10]);
-            new_state[11] = add(state[11], ALL_ROUND_CONSTANTS[base_index + 11]);
+            // new_state[0] = add(state[0], ALL_ROUND_CONSTANTS[base_index]);
+            // new_state[1] = add(state[1], ALL_ROUND_CONSTANTS[base_index + 1]);
+            // new_state[2] = add(state[2], ALL_ROUND_CONSTANTS[base_index + 2]);
+            // new_state[3] = add(state[3], ALL_ROUND_CONSTANTS[base_index + 3]);
+            // new_state[4] = add(state[4], ALL_ROUND_CONSTANTS[base_index + 4]);
+            // new_state[5] = add(state[5], ALL_ROUND_CONSTANTS[base_index + 5]);
+            // new_state[6] = add(state[6], ALL_ROUND_CONSTANTS[base_index + 6]);
+            // new_state[7] = add(state[7], ALL_ROUND_CONSTANTS[base_index + 7]);
+            // new_state[8] = add(state[8], ALL_ROUND_CONSTANTS[base_index + 8]);
+            // new_state[9] = add(state[9], ALL_ROUND_CONSTANTS[base_index + 9]);
+            // new_state[10] = add(state[10], ALL_ROUND_CONSTANTS[base_index + 10]);
+            // new_state[11] = add(state[11], ALL_ROUND_CONSTANTS[base_index + 11]);
+
+            // 最初442004
+            // 関数呼び出しするようになり、445437 (10こ)
+            // 442652 (20こ)
+            // 437567 (30こ)
+            // 430182 (40こ)　21.36kb
+            // 426956 (50こ)　21.59
+            // 437996 (60こ)　21.82
+            // 449036 (70こ) 22.05
+            // 460076 (80こ)　22.28
+            new_state[0] = add(state[0], _get_all_around_constants(base_index));
+            new_state[1] = add(state[1], _get_all_around_constants(base_index + 1));
+            new_state[2] = add(state[2], _get_all_around_constants(base_index + 2));
+            new_state[3] = add(state[3], _get_all_around_constants(base_index + 3));
+            new_state[4] = add(state[4], _get_all_around_constants(base_index + 4));
+            new_state[5] = add(state[5], _get_all_around_constants(base_index + 5));
+            new_state[6] = add(state[6], _get_all_around_constants(base_index + 6));
+            new_state[7] = add(state[7], _get_all_around_constants(base_index + 7));
+            new_state[8] = add(state[8], _get_all_around_constants(base_index + 8));
+            new_state[9] = add(state[9], _get_all_around_constants(base_index + 9));
+            new_state[10] = add(state[10], _get_all_around_constants(base_index + 10));
+            new_state[11] = add(state[11], _get_all_around_constants(base_index + 11));
         }
     }
+
+    function _get_all_around_constants(uint256 index) private view returns (uint256 result) {
+        // if文を360繋げるとガスコストが50を境に高くなる。
+        // なので、50区切り
+        // 50 372812  21.631
+        // 100 375836 22.804
+        // 150 378860 23.977
+
+        // 40区切り
+        // 40 381672
+        // 80 368980
+        // 120 372004
+        // 160 375028 
+
+        // 30区切り
+        // 30 394817
+        // 60 364550
+        // 90 367574
+        // 120 370598
+        // 150 373622
+
+        // 20区切り
+        // 20 410262
+        // 40 377260
+        // 60 
+        // 80 
+        // 100 
+        if (index >= 0 && index <= 19){
+            if (index == 0) {
+                return 0xb585f766f2144405;
+            } else if (index == 1) {
+                return 0x7746a55f43921ad7;
+            } else if (index == 2) {
+                return 0xb2fb0d31cee799b4;
+            } else if (index == 3) {
+                return 0x0f6760a4803427d7;
+            } else if (index == 4) {
+                return 0xe10d666650f4e012;
+            } else if (index == 5) {
+                return 0x8cae14cb07d09bf1;
+            } else if (index == 6) {
+                return 0xd438539c95f63e9f;
+            } else if (index == 7) {
+                return 0xef781c7ce35b4c3d;
+            } else if (index == 8) {
+                return 0xcdc4a239b0c44426;
+            } else if (index == 9) {
+                return 0x277fa208bf337bff;
+            } else if (index == 10) {
+                return 0xe17653a29da578a1;
+            } else if (index == 11) {
+                return 0xc54302f225db2c76;
+            } else if (index == 12) {
+                return 0x86287821f722c881;
+            } else if (index == 13) {
+                return 0x59cd1a8a41c18e55;
+            } else if (index == 14) {
+                return 0xc3b919ad495dc574;
+            } else if (index == 15) {
+                return 0xa484c4c5ef6a0781;
+            } else if (index == 16) {
+                return 0x308bbd23dc5416cc;
+            } else if (index == 17) {
+                return 0x6e4a40c18f30c09c;
+            } else if (index == 18) {
+                return 0x9a2eedb70d8f8cfa;
+            } else if (index == 19) {
+                return 0xe360c6e0ae486f38;
+            }
+            revert("illegal index");
+        } else if (index >= 20 && index <= 39){
+            if (index == 20) {
+                return 0xd5c7718fbfc647fb;
+            } else if (index == 21) {
+                return 0xc35eae071903ff0b;
+            } else if (index == 22) {
+                return 0x849c2656969c4be7;
+            } else if (index == 23) {
+                return 0xc0572c8c08cbbbad;
+            } else if (index == 24) {
+                return 0xe9fa634a21de0082;
+            } else if (index == 25) {
+                return 0xf56f6d48959a600d;
+            } else if (index == 26) {
+                return 0xf7d713e806391165;
+            } else if (index == 27) {
+                return 0x8297132b32825daf;
+            } else if (index == 28) {
+                return 0xad6805e0e30b2c8a;
+            } else if (index == 29) {
+                return 0xac51d9f5fcf8535e;
+            } else if (index == 30) {
+                return 0x502ad7dc18c2ad87;
+            } else if (index == 31) {
+                return 0x57a1550c110b3041;
+            } else if (index == 32) {
+                return 0x66bbd30e6ce0e583;
+            } else if (index == 33) {
+                return 0x0da2abef589d644e;
+            } else if (index == 34) {
+                return 0xf061274fdb150d61;
+            } else if (index == 35) {
+                return 0x28b8ec3ae9c29633;
+            } else if (index == 36) {
+                return 0x92a756e67e2b9413;
+            } else if (index == 37) {
+                return 0x70e741ebfee96586;
+            } else if (index == 38) {
+                return 0x019d5ee2af82ec1c;
+            } else if (index == 39) {
+                return 0x6f6f2ed772466352;
+            } 
+            revert("illegal index");
+        } 
+
+
+
+
+
+        // else if (index >= 30 && index <= 59){
+        //     if (index == 30) {
+        //         return 0x502ad7dc18c2ad87;
+        //     } else if (index == 31) {
+        //         return 0x57a1550c110b3041;
+        //     } else if (index == 32) {
+        //         return 0x66bbd30e6ce0e583;
+        //     } else if (index == 33) {
+        //         return 0x0da2abef589d644e;
+        //     } else if (index == 34) {
+        //         return 0xf061274fdb150d61;
+        //     } else if (index == 35) {
+        //         return 0x28b8ec3ae9c29633;
+        //     } else if (index == 36) {
+        //         return 0x92a756e67e2b9413;
+        //     } else if (index == 37) {
+        //         return 0x70e741ebfee96586;
+        //     } else if (index == 38) {
+        //         return 0x019d5ee2af82ec1c;
+        //     } else if (index == 39) {
+        //         return 0x6f6f2ed772466352;
+        //     } else if (index == 40) {
+        //         return 0x7cf416cfe7e14ca1;
+        //     } else if (index == 41) {
+        //         return 0x61df517b86a46439;
+        //     } else if (index == 42) {
+        //         return 0x85dc499b11d77b75;
+        //     } else if (index == 43) {
+        //         return 0x4b959b48b9c10733;
+        //     } else if (index == 44) {
+        //         return 0xe8be3e5da8043e57;
+        //     } else if (index == 45) {
+        //         return 0xf5c0bc1de6da8699;
+        //     } else if (index == 46) {
+        //         return 0x40b12cbf09ef74bf;
+        //     } else if (index == 47) {
+        //         return 0xa637093ecb2ad631;
+        //     } else if (index == 48) {
+        //         return 0x3cc3f892184df408;
+        //     } else if (index == 49) {
+        //         return 0x2e479dc157bf31bb;
+        //     } else if (index == 50) {
+        //         return 0x6f49de07a6234346;
+        //     } else if (index == 51) {
+        //         return 0x213ce7bede378d7b;
+        //     } else if (index == 52) {
+        //         return 0x5b0431345d4dea83;
+        //     } else if (index == 53) {
+        //         return 0xa2de45780344d6a1;
+        //     } else if (index == 54) {
+        //         return 0x7103aaf94a7bf308;
+        //     } else if (index == 55) {
+        //         return 0x5326fc0d97279301;
+        //     } else if (index == 56) {
+        //         return 0xa9ceb74fec024747;
+        //     } else if (index == 57) {
+        //         return 0x27f8ec88bb21b1a3;
+        //     } else if (index == 58) {
+        //         return 0xfceb4fda1ded0893;
+        //     } else if (index == 59) {
+        //         return 0xfac6ff1346a41675;
+        //     }
+        //     revert("illegal index");
+        // } 
+        // else if (index >= 60 && index <= 89){
+        //     if (index == 60) {
+        //         return 0x7131aa45268d7d8c;
+        //     } else if (index == 61) {
+        //         return 0x9351036095630f9f;
+        //     } else if (index == 62) {
+        //         return 0xad535b24afc26bfb;
+        //     } else if (index == 63) {
+        //         return 0x4627f5c6993e44be;
+        //     } else if (index == 64) {
+        //         return 0x645cf794b8f1cc58;
+        //     } else if (index == 65) {
+        //         return 0x241c70ed0af61617;
+        //     } else if (index == 66) {
+        //         return 0xacb8e076647905f1;
+        //     } else if (index == 67) {
+        //         return 0x3737e9db4c4f474d;
+        //     } else if (index == 68) {
+        //         return 0xe7ea5e33e75fffb6;
+        //     } else if (index == 69) {
+        //         return 0x90dee49fc9bfc23a;
+        //     } else if (index == 70) {
+        //         return 0xd1b1edf76bc09c92;
+        //     } else if (index == 71) {
+        //         return 0x0b65481ba645c602;
+        //     } else if (index == 72) {
+        //         return 0x99ad1aab0814283b;
+        //     } else if (index == 73) {
+        //         return 0x438a7c91d416ca4d;
+        //     } else if (index == 74) {
+        //         return 0xb60de3bcc5ea751c;
+        //     } else if (index == 75) {
+        //         return 0xc99cab6aef6f58bc;
+        //     } else if (index == 76) {
+        //         return 0x69a5ed92a72ee4ff;
+        //     } else if (index == 77) {
+        //         return 0x5e7b329c1ed4ad71;
+        //     } else if (index == 78) {
+        //         return 0x5fc0ac0800144885;
+        //     } else if (index == 79) {
+        //         return 0x32db829239774eca;
+        //     } else if (index == 80) {
+        //         return 0x0ade699c5830f310;
+        //     } else if (index == 81) {
+        //         return 0x7cc5583b10415f21;
+        //     } else if (index == 82) {
+        //         return 0x85df9ed2e166d64f;
+        //     } else if (index == 83) {
+        //         return 0x6604df4fee32bcb1;
+        //     } else if (index == 84) {
+        //         return 0xeb84f608da56ef48;
+        //     } else if (index == 85) {
+        //         return 0xda608834c40e603d;
+        //     } else if (index == 86) {
+        //         return 0x8f97fe408061f183;
+        //     } else if (index == 87) {
+        //         return 0xa93f485c96f37b89;
+        //     } else if (index == 88) {
+        //         return 0x6704e8ee8f18d563;
+        //     } else if (index == 89) {
+        //         return 0xcee3e9ac1e072119;
+        //     }
+        //     revert("illegal index");
+        // }
+        
+        //  else if (index >= 90 && index <= 119){
+        //     if (index == 90) {
+        //         return 0x510d0e65e2b470c1;
+        //     } else if (index == 91) {
+        //         return 0xf6323f486b9038f0;
+        //     } else if (index == 92) {
+        //         return 0x0b508cdeffa5ceef;
+        //     } else if (index == 93) {
+        //         return 0xf2417089e4fb3cbd;
+        //     } else if (index == 94) {
+        //         return 0x60e75c2890d15730;
+        //     } else if (index == 95) {
+        //         return 0xa6217d8bf660f29c;
+        //     } else if (index == 96) {
+        //         return 0x7159cd30c3ac118e;
+        //     } else if (index == 97) {
+        //         return 0x839b4e8fafead540;
+        //     } else if (index == 98) {
+        //         return 0x0d3f3e5e82920adc;
+        //     } else if (index == 99) {
+        //         return 0x8f7d83bddee7bba8;
+        //     } else if (index == 100) {
+        //         return 0x780f2243ea071d06;
+        //     } else if (index == 101) {
+        //         return 0xeb915845f3de1634;
+        //     } else if (index == 102) {
+        //         return 0xd19e120d26b6f386;
+        //     } else if (index == 103) {
+        //         return 0x016ee53a7e5fecc6;
+        //     } else if (index == 104) {
+        //         return 0xcb5fd54e7933e477;
+        //     } else if (index == 105) {
+        //         return 0xacb8417879fd449f;
+        //     } else if (index == 106) {
+        //         return 0x9c22190be7f74732;
+        //     } else if (index == 107) {
+        //         return 0x5d693c1ba3ba3621;
+        //     } else if (index == 108) {
+        //         return 0xdcef0797c2b69ec7;
+        //     } else if (index == 109) {
+        //         return 0x3d639263da827b13;
+        //     } else if (index == 110) {
+        //         return 0xe273fd971bc8d0e7;
+        //     } else if (index == 111) {
+        //         return 0x418f02702d227ed5;
+        //     } else if (index == 112) {
+        //         return 0x8c25fda3b503038c;
+        //     } else if (index == 113) {
+        //         return 0x2cbaed4daec8c07c;
+        //     } else if (index == 114) {
+        //         return 0x5f58e6afcdd6ddc2;
+        //     } else if (index == 115) {
+        //         return 0x284650ac5e1b0eba;
+        //     } else if (index == 116) {
+        //         return 0x635b337ee819dab5;
+        //     } else if (index == 117) {
+        //         return 0x9f9a036ed4f2d49f;
+        //     } else if (index == 118) {
+        //         return 0xb93e260cae5c170e;
+        //     } else if (index == 119) {
+        //         return 0xb0a7eae879ddb76d;
+        //     }
+        //     revert("illegal index");
+        // } 
+        
+        // else if (index >= 120 && index <= 149){
+        //     if (index == 120) {
+        //         return 0xd0762cbc8ca6570c;
+        //     } else if (index == 121) {
+        //         return 0x34c6efb812b04bf5;
+        //     } else if (index == 122) {
+        //         return 0x40bf0ab5fa14c112;
+        //     } else if (index == 123) {
+        //         return 0xb6b570fc7c5740d3;
+        //     } else if (index == 124) {
+        //         return 0x5a27b9002de33454;
+        //     } else if (index == 125) {
+        //         return 0xb1a5b165b6d2b2d2;
+        //     } else if (index == 126) {
+        //         return 0x8722e0ace9d1be22;
+        //     } else if (index == 127) {
+        //         return 0x788ee3b37e5680fb;
+        //     } else if (index == 128) {
+        //         return 0x14a726661551e284;
+        //     } else if (index == 129) {
+        //         return 0x98b7672f9ef3b419;
+        //     } else if (index == 130) {
+        //         return 0xbb93ae776bb30e3a;
+        //     } else if (index == 131) {
+        //         return 0x28fd3b046380f850;
+        //     } else if (index == 132) {
+        //         return 0x30a4680593258387;
+        //     } else if (index == 133) {
+        //         return 0x337dc00c61bd9ce1;
+        //     } else if (index == 134) {
+        //         return 0xd5eca244c7a4ff1d;
+        //     } else if (index == 135) {
+        //         return 0x7762638264d279bd;
+        //     } else if (index == 136) {
+        //         return 0xc1e434bedeefd767;
+        //     } else if (index == 137) {
+        //         return 0x0299351a53b8ec22;
+        //     } else if (index == 138) {
+        //         return 0xb2d456e4ad251b80;
+        //     } else if (index == 139) {
+        //         return 0x3e9ed1fda49cea0b;
+        //     } else if (index == 140) {
+        //         return 0x2972a92ba450bed8;
+        //     } else if (index == 141) {
+        //         return 0x20216dd77be493de;
+        //     } else if (index == 142) {
+        //         return 0xadffe8cf28449ec6;
+        //     } else if (index == 143) {
+        //         return 0x1c4dbb1c4c27d243;
+        //     } else if (index == 144) {
+        //         return 0x15a16a8a8322d458;
+        //     } else if (index == 145) {
+        //         return 0x388a128b7fd9a609;
+        //     } else if (index == 146) {
+        //         return 0x2300e5d6baedf0fb;
+        //     } else if (index == 147) {
+        //         return 0x2f63aa8647e15104;
+        //     } else if (index == 148) {
+        //         return 0xf1c36ce86ecec269;
+        //     } else if (index == 149) {
+        //         return 0x27181125183970c9;
+        //     } 
+        //     revert("illegal index");
+        // }
+
+
+
+// else if (index == 150) {
+//                 return 0xe584029370dca96d;
+//             } else if (index == 151) {
+//                 return 0x4d9bbc3e02f1cfb2;
+//             } else if (index == 152) {
+//                 return 0xea35bc29692af6f8;
+//             } else if (index == 153) {
+//                 return 0x18e21b4beabb4137;
+//             } else if (index == 154) {
+//                 return 0x1e3b9fc625b554f4;
+//             } else if (index == 155) {
+//                 return 0x25d64362697828fd;
+//             } else if (index == 156) {
+//                 return 0x5a3f1bb1c53a9645;
+//             } else if (index == 157) {
+//                 return 0xdb7f023869fb8d38;
+//             } else if (index == 158) {
+//                 return 0xb462065911d4e1fc;
+//             } else if (index == 159) {
+//                 return 0x49c24ae4437d8030;
+//             }
+        return ALL_ROUND_CONSTANTS[index];
+    }
+
 
     // `x` allows 64 bits number.
     // `x7` is 192 bits number.
