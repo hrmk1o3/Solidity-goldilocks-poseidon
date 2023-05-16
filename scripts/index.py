@@ -358,7 +358,8 @@ def make_get_fast_partial_round_initial_matrix(prefix=''):
 #     state = _mds_partial_layer_fast(state, i);
 # }
 def make_partial_rounds_inner(prefix=''):
-    tmp = prefix + 'state = _mds_partial_layer_init(_partial_first_constant_layer(state));'
+    tmp = prefix + \
+        'state = _mds_partial_layer_init(_partial_first_constant_layer(state));'
     for i in range(0, 22):
         tmp += prefix + f'state[0] = _sbox_monomial(state[0]) + {FAST_PARTIAL_ROUND_CONSTANTS[i]};' \
             + prefix + f'state = _mds_partial_layer_fast(state, {i});'
@@ -380,7 +381,14 @@ def make_partial_rounds(prefix=''):
 def make_mds_row_shf_inner(r, prefix=''):
     i = 0
     tmp = prefix + f'res = state[{(r + i) % 12}] * MDS_MATRIX_CIRC_{i}'
-    for i in range(1, 12):
+    for i in range(1, 3):
+        tmp += prefix + INDENT + \
+            f'+ state[{(r + i) % 12}] * MDS_MATRIX_CIRC_{i}'
+
+    i = 3
+    tmp += prefix + INDENT + f'+ (state[{(r + i) % 12}] << 4)'
+
+    for i in range(4, 12):
         tmp += prefix + INDENT + \
             f'+ state[{(r + i) % 12}] * MDS_MATRIX_CIRC_{i}'
 
@@ -396,3 +404,4 @@ if __name__ == '__main__':
     # tmp = make_partial_rounds(prefix='\n' + INDENT) + '\n'
     tmp = make_mds_row_shf_inner(
         11, prefix='\n' + INDENT + INDENT + INDENT) + '\n'
+    print(tmp)
