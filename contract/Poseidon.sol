@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 import "forge-std/Test.sol";
 
 contract Poseidon {
-    uint256 public constant HALF_N_FULL_ROUNDS = 4;
+    uint256 constant HALF_N_FULL_ROUNDS = 4;
     uint256 constant N_FULL_ROUNDS_TOTAL = 2 * HALF_N_FULL_ROUNDS;
     uint256 constant N_PARTIAL_ROUNDS = 22;
     uint256 constant N_ROUNDS = N_FULL_ROUNDS_TOTAL + N_PARTIAL_ROUNDS;

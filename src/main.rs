@@ -1,6 +1,6 @@
 use plonky2::field::goldilocks_field::GoldilocksField;
 use plonky2::field::ops::Square;
-use plonky2::field::types::Field;
+use plonky2::field::types::{Field, Sample};
 use plonky2::hash::hash_types::RichField;
 use plonky2::hash::hashing::{PlonkyPermutation, SPONGE_WIDTH};
 
@@ -124,8 +124,8 @@ fn mds_row_shf(r: usize, v: &[F; WIDTH]) -> F {
 fn mds_layer(state: &[F; WIDTH]) -> [F; WIDTH] {
     let mut result = [F::ZERO; WIDTH];
 
-    for r in 0..12 {
-        result[r] = mds_row_shf(r, &state);
+    for (r, result) in result.iter_mut().enumerate() {
+        *result = mds_row_shf(r, state);
     }
 
     result
@@ -134,7 +134,7 @@ fn mds_layer(state: &[F; WIDTH]) -> [F; WIDTH] {
 fn constant_layer(state: &mut [F; WIDTH], round_ctr: usize) {
     for i in 0..12 {
         let round_constant = ALL_ROUND_CONSTANTS[i + WIDTH * round_ctr];
-        state[i] = state[i] + F::from_canonical_u64(round_constant);
+        state[i] += F::from_canonical_u64(round_constant);
     }
 }
 
@@ -147,8 +147,8 @@ fn sbox_monomial(x: F) -> F {
 }
 
 fn sbox_layer(state: &mut [F; WIDTH]) {
-    for i in 0..12 {
-        state[i] = sbox_monomial(state[i]);
+    for s in state.iter_mut() {
+        *s = sbox_monomial(*s);
     }
 }
 
@@ -201,10 +201,21 @@ pub fn hash_n_to_m_no_pad<F: RichField, P: PlonkyPermutation<F>>(
         state[..input_chunk.len()].copy_from_slice(input_chunk);
         state = P::permute(state);
     }
-    return state[0..num_outputs].to_vec();
+
+    state[0..num_outputs].to_vec()
 }
 
 fn main() {
-    let a = hash_n_to_m_no_pad::<F, PoseidonPermutation>(&[F::ONE], 4);
-    dbg!(a);
+    let inputs = [F::ONE];
+    let outputs = hash_n_to_m_no_pad::<F, PoseidonPermutation>(&inputs, 4);
+    dbg!(outputs);
+    let rng = &mut rand::thread_rng();
+    let inputs = [(); 25].map(|_| F::sample(rng));
+    for (i, input) in inputs.iter().enumerate() {
+        println!("input[{i}] = {};", input.0);
+    }
+    let outputs = hash_n_to_m_no_pad::<F, PoseidonPermutation>(&inputs, 12);
+    for (i, output) in outputs.iter().enumerate() {
+        println!("assertEq(output[{i}], {});", output.0);
+    }
 }
