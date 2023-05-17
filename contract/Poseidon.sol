@@ -1430,9 +1430,17 @@ contract Poseidon {
 
         uint256[WIDTH] memory state;
         for (uint256 i = 0; i < num_full_round; i++) {
-            for (uint256 j = 0; j < SPONGE_RATE; j++) {
-                state[j] = input[i * SPONGE_RATE + j];
-            }
+            // for (uint256 j = 0; j < SPONGE_RATE; j++) {
+            //     state[j] = input[i * SPONGE_RATE + j];
+            // }
+            state[0] = input[i * SPONGE_RATE + 0];
+            state[1] = input[i * SPONGE_RATE + 1];
+            state[2] = input[i * SPONGE_RATE + 2];
+            state[3] = input[i * SPONGE_RATE + 3];
+            state[4] = input[i * SPONGE_RATE + 4];
+            state[5] = input[i * SPONGE_RATE + 5];
+            state[6] = input[i * SPONGE_RATE + 6];
+            state[7] = input[i * SPONGE_RATE + 7];
             state = _permute(state);
         }
         for (uint256 j = 0; j < last_round; j++) {
