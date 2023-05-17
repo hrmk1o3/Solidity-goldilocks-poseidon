@@ -558,17 +558,17 @@ contract Poseidon {
             //     d_sum += state[i] * FAST_PARTIAL_ROUND_W_HATS[r][i - 1];
             // }
             if (r == 0) {
-                d_sum += state[1] * 0x3d999c961b7c63b0;
-                d_sum += state[2] * 0x814e82efcd172529;
-                d_sum += state[3] * 0x2421e5d236704588;
-                d_sum += state[4] * 0x887af7d4dd482328;
-                d_sum += state[5] * 0xa5e9c291f6119b27;
-                d_sum += state[6] * 0xbdc52b2676a4b4aa;
-                d_sum += state[7] * 0x64832009d29bcf57;
-                d_sum += state[8] * 0x09c4155174a552cc;
-                d_sum += state[9] * 0x463f9ee03d290810;
-                d_sum += state[10] * 0xc810936e64982542;
-                d_sum += state[11] * 0x043b1c289f7bc3ac;
+                d_sum += state[1] * 0x3d999c961b7c63b0
+                    + state[2] * 0x814e82efcd172529
+                    + state[3] * 0x2421e5d236704588
+                    + state[4] * 0x887af7d4dd482328
+                    + state[5] * 0xa5e9c291f6119b27
+                    + state[6] * 0xbdc52b2676a4b4aa
+                    + state[7] * 0x64832009d29bcf57
+                    + state[8] * 0x09c4155174a552cc
+                    + state[9] * 0x463f9ee03d290810
+                    + state[10] * 0xc810936e64982542
+                    + state[11] * 0x043b1c289f7bc3ac;
                 // TODO: Rewrite to reduce 520 gas.
                 // d_sum += state[1] * 0x3d999c961b7c63b0
                 //     + state[2] * 0x814e82efcd172529
@@ -595,257 +595,257 @@ contract Poseidon {
                 // new_state[11] = mod(state[11] + state[0] * 0x3ee8011c2b37f77c);
                 // return new_state;
             } else if (r == 1) {
-                d_sum += state[1] * 0x673655aae8be5a8b;
-                d_sum += state[2] * 0xd510fe714f39fa10;
-                d_sum += state[3] * 0x2c68a099b51c9e73;
-                d_sum += state[4] * 0xa667bfa9aa96999d;
-                d_sum += state[5] * 0x4d67e72f063e2108;
-                d_sum += state[6] * 0xf84dde3e6acda179;
-                d_sum += state[7] * 0x40f9cc8c08f80981;
-                d_sum += state[8] * 0x5ead032050097142;
-                d_sum += state[9] * 0x6591b02092d671bb;
-                d_sum += state[10] * 0x00e18c71963dd1b7;
-                d_sum += state[11] * 0x8a21bcd24a14218a;
+                d_sum += state[1] * 0x673655aae8be5a8b
+                    + state[2] * 0xd510fe714f39fa10
+                    + state[3] * 0x2c68a099b51c9e73
+                    + state[4] * 0xa667bfa9aa96999d
+                    + state[5] * 0x4d67e72f063e2108
+                    + state[6] * 0xf84dde3e6acda179
+                    + state[7] * 0x40f9cc8c08f80981
+                    + state[8] * 0x5ead032050097142
+                    + state[9] * 0x6591b02092d671bb
+                    + state[10] * 0x00e18c71963dd1b7
+                    + state[11] * 0x8a21bcd24a14218a;
             } else if (r == 2) {
-                d_sum += state[1] * 0x202800f4addbdc87;
-                d_sum += state[2] * 0xe4b5bdb1cc3504ff;
-                d_sum += state[3] * 0xbe32b32a825596e7;
-                d_sum += state[4] * 0x8e0f68c5dc223b9a;
-                d_sum += state[5] * 0x58022d9e1c256ce3;
-                d_sum += state[6] * 0x584d29227aa073ac;
-                d_sum += state[7] * 0x8b9352ad04bef9e7;
-                d_sum += state[8] * 0xaead42a3f445ecbf;
-                d_sum += state[9] * 0x3c667a1d833a3cca;
-                d_sum += state[10] * 0xda6f61838efa1ffe;
-                d_sum += state[11] * 0xe8f749470bd7c446;
+                d_sum += state[1] * 0x202800f4addbdc87
+                    + state[2] * 0xe4b5bdb1cc3504ff
+                    + state[3] * 0xbe32b32a825596e7
+                    + state[4] * 0x8e0f68c5dc223b9a
+                    + state[5] * 0x58022d9e1c256ce3
+                    + state[6] * 0x584d29227aa073ac
+                    + state[7] * 0x8b9352ad04bef9e7
+                    + state[8] * 0xaead42a3f445ecbf
+                    + state[9] * 0x3c667a1d833a3cca
+                    + state[10] * 0xda6f61838efa1ffe
+                    + state[11] * 0xe8f749470bd7c446;
             } else if (r == 3) {
-                d_sum += state[1] * 0xc5b85bab9e5b3869;
-                d_sum += state[2] * 0x45245258aec51cf7;
-                d_sum += state[3] * 0x16e6b8e68b931830;
-                d_sum += state[4] * 0xe2ae0f051418112c;
-                d_sum += state[5] * 0x0470e26a0093a65b;
-                d_sum += state[6] * 0x6bef71973a8146ed;
-                d_sum += state[7] * 0x119265be51812daf;
-                d_sum += state[8] * 0xb0be7356254bea2e;
-                d_sum += state[9] * 0x8584defff7589bd7;
-                d_sum += state[10] * 0x3c5fe4aeb1fb52ba;
-                d_sum += state[11] * 0x9e7cd88acf543a5e;
+                d_sum += state[1] * 0xc5b85bab9e5b3869
+                    + state[2] * 0x45245258aec51cf7
+                    + state[3] * 0x16e6b8e68b931830
+                    + state[4] * 0xe2ae0f051418112c
+                    + state[5] * 0x0470e26a0093a65b
+                    + state[6] * 0x6bef71973a8146ed
+                    + state[7] * 0x119265be51812daf
+                    + state[8] * 0xb0be7356254bea2e
+                    + state[9] * 0x8584defff7589bd7
+                    + state[10] * 0x3c5fe4aeb1fb52ba
+                    + state[11] * 0x9e7cd88acf543a5e;
             } else if (r == 4) {
-                d_sum += state[1] * 0x179be4bba87f0a8c;
-                d_sum += state[2] * 0xacf63d95d8887355;
-                d_sum += state[3] * 0x6696670196b0074f;
-                d_sum += state[4] * 0xd99ddf1fe75085f9;
-                d_sum += state[5] * 0xc2597881fef0283b;
-                d_sum += state[6] * 0xcf48395ee6c54f14;
-                d_sum += state[7] * 0x15226a8e4cd8d3b6;
-                d_sum += state[8] * 0xc053297389af5d3b;
-                d_sum += state[9] * 0x2c08893f0d1580e2;
-                d_sum += state[10] * 0x0ed3cbcff6fcc5ba;
-                d_sum += state[11] * 0xc82f510ecf81f6d0;
+                d_sum += state[1] * 0x179be4bba87f0a8c
+                    + state[2] * 0xacf63d95d8887355
+                    + state[3] * 0x6696670196b0074f
+                    + state[4] * 0xd99ddf1fe75085f9
+                    + state[5] * 0xc2597881fef0283b
+                    + state[6] * 0xcf48395ee6c54f14
+                    + state[7] * 0x15226a8e4cd8d3b6
+                    + state[8] * 0xc053297389af5d3b
+                    + state[9] * 0x2c08893f0d1580e2
+                    + state[10] * 0x0ed3cbcff6fcc5ba
+                    + state[11] * 0xc82f510ecf81f6d0;
             } else if (r == 5) {
-                d_sum += state[1] * 0x94b06183acb715cc;
-                d_sum += state[2] * 0x500392ed0d431137;
-                d_sum += state[3] * 0x861cc95ad5c86323;
-                d_sum += state[4] * 0x05830a443f86c4ac;
-                d_sum += state[5] * 0x3b68225874a20a7c;
-                d_sum += state[6] * 0x10b3309838e236fb;
-                d_sum += state[7] * 0x9b77fc8bcd559e2c;
-                d_sum += state[8] * 0xbdecf5e0cb9cb213;
-                d_sum += state[9] * 0x30276f1221ace5fa;
-                d_sum += state[10] * 0x7935dd342764a144;
-                d_sum += state[11] * 0xeac6db520bb03708;
+                d_sum += state[1] * 0x94b06183acb715cc
+                    + state[2] * 0x500392ed0d431137
+                    + state[3] * 0x861cc95ad5c86323
+                    + state[4] * 0x05830a443f86c4ac
+                    + state[5] * 0x3b68225874a20a7c
+                    + state[6] * 0x10b3309838e236fb
+                    + state[7] * 0x9b77fc8bcd559e2c
+                    + state[8] * 0xbdecf5e0cb9cb213
+                    + state[9] * 0x30276f1221ace5fa
+                    + state[10] * 0x7935dd342764a144
+                    + state[11] * 0xeac6db520bb03708;
             } else if (r == 6) {
-                d_sum += state[1] * 0x7186a80551025f8f;
-                d_sum += state[2] * 0x622247557e9b5371;
-                d_sum += state[3] * 0xc4cbe326d1ad9742;
-                d_sum += state[4] * 0x55f1523ac6a23ea2;
-                d_sum += state[5] * 0xa13dfe77a3d52f53;
-                d_sum += state[6] * 0xe30750b6301c0452;
-                d_sum += state[7] * 0x08bd488070a3a32b;
-                d_sum += state[8] * 0xcd800caef5b72ae3;
-                d_sum += state[9] * 0x83329c90f04233ce;
-                d_sum += state[10] * 0xb5b99e6664a0a3ee;
-                d_sum += state[11] * 0x6b0731849e200a7f;
+                d_sum += state[1] * 0x7186a80551025f8f
+                    + state[2] * 0x622247557e9b5371
+                    + state[3] * 0xc4cbe326d1ad9742
+                    + state[4] * 0x55f1523ac6a23ea2
+                    + state[5] * 0xa13dfe77a3d52f53
+                    + state[6] * 0xe30750b6301c0452
+                    + state[7] * 0x08bd488070a3a32b
+                    + state[8] * 0xcd800caef5b72ae3
+                    + state[9] * 0x83329c90f04233ce
+                    + state[10] * 0xb5b99e6664a0a3ee
+                    + state[11] * 0x6b0731849e200a7f;
             } else if (r == 7) {
-                d_sum += state[1] * 0xec3fabc192b01799;
-                d_sum += state[2] * 0x382b38cee8ee5375;
-                d_sum += state[3] * 0x3bfb6c3f0e616572;
-                d_sum += state[4] * 0x514abd0cf6c7bc86;
-                d_sum += state[5] * 0x47521b1361dcc546;
-                d_sum += state[6] * 0x178093843f863d14;
-                d_sum += state[7] * 0xad1003c5d28918e7;
-                d_sum += state[8] * 0x738450e42495bc81;
-                d_sum += state[9] * 0xaf947c59af5e4047;
-                d_sum += state[10] * 0x4653fb0685084ef2;
-                d_sum += state[11] * 0x057fde2062ae35bf;
+                d_sum += state[1] * 0xec3fabc192b01799
+                    + state[2] * 0x382b38cee8ee5375
+                    + state[3] * 0x3bfb6c3f0e616572
+                    + state[4] * 0x514abd0cf6c7bc86
+                    + state[5] * 0x47521b1361dcc546
+                    + state[6] * 0x178093843f863d14
+                    + state[7] * 0xad1003c5d28918e7
+                    + state[8] * 0x738450e42495bc81
+                    + state[9] * 0xaf947c59af5e4047
+                    + state[10] * 0x4653fb0685084ef2
+                    + state[11] * 0x057fde2062ae35bf;
             } else if (r == 8) {
-                d_sum += state[1] * 0xe376678d843ce55e;
-                d_sum += state[2] * 0x66f3860d7514e7fc;
-                d_sum += state[3] * 0x7817f3dfff8b4ffa;
-                d_sum += state[4] * 0x3929624a9def725b;
-                d_sum += state[5] * 0x0126ca37f215a80a;
-                d_sum += state[6] * 0xfce2f5d02762a303;
-                d_sum += state[7] * 0x1bc927375febbad7;
-                d_sum += state[8] * 0x85b481e5243f60bf;
-                d_sum += state[9] * 0x2d3c5f42a39c91a0;
-                d_sum += state[10] * 0x0811719919351ae8;
-                d_sum += state[11] * 0xf669de0add993131;
+                d_sum += state[1] * 0xe376678d843ce55e
+                    + state[2] * 0x66f3860d7514e7fc
+                    + state[3] * 0x7817f3dfff8b4ffa
+                    + state[4] * 0x3929624a9def725b
+                    + state[5] * 0x0126ca37f215a80a
+                    + state[6] * 0xfce2f5d02762a303
+                    + state[7] * 0x1bc927375febbad7
+                    + state[8] * 0x85b481e5243f60bf
+                    + state[9] * 0x2d3c5f42a39c91a0
+                    + state[10] * 0x0811719919351ae8
+                    + state[11] * 0xf669de0add993131;
             } else if (r == 9) {
-                d_sum += state[1] * 0x7de38bae084da92d;
-                d_sum += state[2] * 0x5b848442237e8a9b;
-                d_sum += state[3] * 0xf6c705da84d57310;
-                d_sum += state[4] * 0x31e6a4bdb6a49017;
-                d_sum += state[5] * 0x889489706e5c5c0f;
-                d_sum += state[6] * 0x0e4a205459692a1b;
-                d_sum += state[7] * 0xbac3fa75ee26f299;
-                d_sum += state[8] * 0x5f5894f4057d755e;
-                d_sum += state[9] * 0xb0dc3ecd724bb076;
-                d_sum += state[10] * 0x5e34d8554a6452ba;
-                d_sum += state[11] * 0x04f78fd8c1fdcc5f;
+                d_sum += state[1] * 0x7de38bae084da92d
+                    + state[2] * 0x5b848442237e8a9b
+                    + state[3] * 0xf6c705da84d57310
+                    + state[4] * 0x31e6a4bdb6a49017
+                    + state[5] * 0x889489706e5c5c0f
+                    + state[6] * 0x0e4a205459692a1b
+                    + state[7] * 0xbac3fa75ee26f299
+                    + state[8] * 0x5f5894f4057d755e
+                    + state[9] * 0xb0dc3ecd724bb076
+                    + state[10] * 0x5e34d8554a6452ba
+                    + state[11] * 0x04f78fd8c1fdcc5f;
             } else if (r == 10) {
-                d_sum += state[1] * 0x4dd19c38779512ea;
-                d_sum += state[2] * 0xdb79ba02704620e9;
-                d_sum += state[3] * 0x92a29a3675a5d2be;
-                d_sum += state[4] * 0xd5177029fe495166;
-                d_sum += state[5] * 0xd32b3298a13330c1;
-                d_sum += state[6] * 0x251c4a3eb2c5f8fd;
-                d_sum += state[7] * 0xe1c48b26e0d98825;
-                d_sum += state[8] * 0x3301d3362a4ffccb;
-                d_sum += state[9] * 0x09bb6c88de8cd178;
-                d_sum += state[10] * 0xdc05b676564f538a;
-                d_sum += state[11] * 0x60192d883e473fee;
+                d_sum += state[1] * 0x4dd19c38779512ea
+                    + state[2] * 0xdb79ba02704620e9
+                    + state[3] * 0x92a29a3675a5d2be
+                    + state[4] * 0xd5177029fe495166
+                    + state[5] * 0xd32b3298a13330c1
+                    + state[6] * 0x251c4a3eb2c5f8fd
+                    + state[7] * 0xe1c48b26e0d98825
+                    + state[8] * 0x3301d3362a4ffccb
+                    + state[9] * 0x09bb6c88de8cd178
+                    + state[10] * 0xdc05b676564f538a
+                    + state[11] * 0x60192d883e473fee;
             } else if (r == 11) {
-                d_sum += state[1] * 0x16b9774801ac44a0;
-                d_sum += state[2] * 0x3cb8411e786d3c8e;
-                d_sum += state[3] * 0xa86e9cf505072491;
-                d_sum += state[4] * 0x0178928152e109ae;
-                d_sum += state[5] * 0x5317b905a6e1ab7b;
-                d_sum += state[6] * 0xda20b3be7f53d59f;
-                d_sum += state[7] * 0xcb97dedecebee9ad;
-                d_sum += state[8] * 0x4bd545218c59f58d;
-                d_sum += state[9] * 0x77dc8d856c05a44a;
-                d_sum += state[10] * 0x87948589e4f243fd;
-                d_sum += state[11] * 0x7e5217af969952c2;
+                d_sum += state[1] * 0x16b9774801ac44a0
+                    + state[2] * 0x3cb8411e786d3c8e
+                    + state[3] * 0xa86e9cf505072491
+                    + state[4] * 0x0178928152e109ae
+                    + state[5] * 0x5317b905a6e1ab7b
+                    + state[6] * 0xda20b3be7f53d59f
+                    + state[7] * 0xcb97dedecebee9ad
+                    + state[8] * 0x4bd545218c59f58d
+                    + state[9] * 0x77dc8d856c05a44a
+                    + state[10] * 0x87948589e4f243fd
+                    + state[11] * 0x7e5217af969952c2;
             } else if (r == 12) {
-                d_sum += state[1] * 0xbc58987d06a84e4d;
-                d_sum += state[2] * 0x0b5d420244c9cae3;
-                d_sum += state[3] * 0xa3c4711b938c02c0;
-                d_sum += state[4] * 0x3aace640a3e03990;
-                d_sum += state[5] * 0x865a0f3249aacd8a;
-                d_sum += state[6] * 0x8d00b2a7dbed06c7;
-                d_sum += state[7] * 0x6eacb905beb7e2f8;
-                d_sum += state[8] * 0x045322b216ec3ec7;
-                d_sum += state[9] * 0xeb9de00d594828e6;
-                d_sum += state[10] * 0x088c5f20df9e5c26;
-                d_sum += state[11] * 0xf555f4112b19781f;
+                d_sum += state[1] * 0xbc58987d06a84e4d
+                    + state[2] * 0x0b5d420244c9cae3
+                    + state[3] * 0xa3c4711b938c02c0
+                    + state[4] * 0x3aace640a3e03990
+                    + state[5] * 0x865a0f3249aacd8a
+                    + state[6] * 0x8d00b2a7dbed06c7
+                    + state[7] * 0x6eacb905beb7e2f8
+                    + state[8] * 0x045322b216ec3ec7
+                    + state[9] * 0xeb9de00d594828e6
+                    + state[10] * 0x088c5f20df9e5c26
+                    + state[11] * 0xf555f4112b19781f;
             } else if (r == 13) {
-                d_sum += state[1] * 0xa8cedbff1813d3a7;
-                d_sum += state[2] * 0x50dcaee0fd27d164;
-                d_sum += state[3] * 0xf1cb02417e23bd82;
-                d_sum += state[4] * 0xfaf322786e2abe8b;
-                d_sum += state[5] * 0x937a4315beb5d9b6;
-                d_sum += state[6] * 0x1b18992921a11d85;
-                d_sum += state[7] * 0x7d66c4368b3c497b;
-                d_sum += state[8] * 0x0e7946317a6b4e99;
-                d_sum += state[9] * 0xbe4430134182978b;
-                d_sum += state[10] * 0x3771e82493ab262d;
-                d_sum += state[11] * 0xa671690d8095ce82;
+                d_sum += state[1] * 0xa8cedbff1813d3a7
+                    + state[2] * 0x50dcaee0fd27d164
+                    + state[3] * 0xf1cb02417e23bd82
+                    + state[4] * 0xfaf322786e2abe8b
+                    + state[5] * 0x937a4315beb5d9b6
+                    + state[6] * 0x1b18992921a11d85
+                    + state[7] * 0x7d66c4368b3c497b
+                    + state[8] * 0x0e7946317a6b4e99
+                    + state[9] * 0xbe4430134182978b
+                    + state[10] * 0x3771e82493ab262d
+                    + state[11] * 0xa671690d8095ce82;
             } else if (r == 14) {
-                d_sum += state[1] * 0xb035585f6e929d9d;
-                d_sum += state[2] * 0xba1579c7e219b954;
-                d_sum += state[3] * 0xcb201cf846db4ba3;
-                d_sum += state[4] * 0x287bf9177372cf45;
-                d_sum += state[5] * 0xa350e4f61147d0a6;
-                d_sum += state[6] * 0xd5d0ecfb50bcff99;
-                d_sum += state[7] * 0x2e166aa6c776ed21;
-                d_sum += state[8] * 0xe1e66c991990e282;
-                d_sum += state[9] * 0x662b329b01e7bb38;
-                d_sum += state[10] * 0x8aa674b36144d9a9;
-                d_sum += state[11] * 0xcbabf78f97f95e65;
+                d_sum += state[1] * 0xb035585f6e929d9d
+                    + state[2] * 0xba1579c7e219b954
+                    + state[3] * 0xcb201cf846db4ba3
+                    + state[4] * 0x287bf9177372cf45
+                    + state[5] * 0xa350e4f61147d0a6
+                    + state[6] * 0xd5d0ecfb50bcff99
+                    + state[7] * 0x2e166aa6c776ed21
+                    + state[8] * 0xe1e66c991990e282
+                    + state[9] * 0x662b329b01e7bb38
+                    + state[10] * 0x8aa674b36144d9a9
+                    + state[11] * 0xcbabf78f97f95e65;
             } else if (r == 15) {
-                d_sum += state[1] * 0xeec24b15a06b53fe;
-                d_sum += state[2] * 0xc8a7aa07c5633533;
-                d_sum += state[3] * 0xefe9c6fa4311ad51;
-                d_sum += state[4] * 0xb9173f13977109a1;
-                d_sum += state[5] * 0x69ce43c9cc94aedc;
-                d_sum += state[6] * 0xecf623c9cd118815;
-                d_sum += state[7] * 0x28625def198c33c7;
-                d_sum += state[8] * 0xccfc5f7de5c3636a;
-                d_sum += state[9] * 0xf5e6c40f1621c299;
-                d_sum += state[10] * 0xcec0e58c34cb64b1;
-                d_sum += state[11] * 0xa868ea113387939f;
+                d_sum += state[1] * 0xeec24b15a06b53fe
+                    + state[2] * 0xc8a7aa07c5633533
+                    + state[3] * 0xefe9c6fa4311ad51
+                    + state[4] * 0xb9173f13977109a1
+                    + state[5] * 0x69ce43c9cc94aedc
+                    + state[6] * 0xecf623c9cd118815
+                    + state[7] * 0x28625def198c33c7
+                    + state[8] * 0xccfc5f7de5c3636a
+                    + state[9] * 0xf5e6c40f1621c299
+                    + state[10] * 0xcec0e58c34cb64b1
+                    + state[11] * 0xa868ea113387939f;
             } else if (r == 16) {
-                d_sum += state[1] * 0xd8dddbdc5ce4ef45;
-                d_sum += state[2] * 0xacfc51de8131458c;
-                d_sum += state[3] * 0x146bb3c0fe499ac0;
-                d_sum += state[4] * 0x9e65309f15943903;
-                d_sum += state[5] * 0x80d0ad980773aa70;
-                d_sum += state[6] * 0xf97817d4ddbf0607;
-                d_sum += state[7] * 0xe4626620a75ba276;
-                d_sum += state[8] * 0x0dfdc7fd6fc74f66;
-                d_sum += state[9] * 0xf464864ad6f2bb93;
-                d_sum += state[10] * 0x02d55e52a5d44414;
-                d_sum += state[11] * 0xdd8de62487c40925;
+                d_sum += state[1] * 0xd8dddbdc5ce4ef45
+                    + state[2] * 0xacfc51de8131458c
+                    + state[3] * 0x146bb3c0fe499ac0
+                    + state[4] * 0x9e65309f15943903
+                    + state[5] * 0x80d0ad980773aa70
+                    + state[6] * 0xf97817d4ddbf0607
+                    + state[7] * 0xe4626620a75ba276
+                    + state[8] * 0x0dfdc7fd6fc74f66
+                    + state[9] * 0xf464864ad6f2bb93
+                    + state[10] * 0x02d55e52a5d44414
+                    + state[11] * 0xdd8de62487c40925;
             } else if (r == 17) {
-                d_sum += state[1] * 0xc15acf44759545a3;
-                d_sum += state[2] * 0xcbfdcf39869719d4;
-                d_sum += state[3] * 0x33f62042e2f80225;
-                d_sum += state[4] * 0x2599c5ead81d8fa3;
-                d_sum += state[5] * 0x0b306cb6c1d7c8d0;
-                d_sum += state[6] * 0x658c80d3df3729b1;
-                d_sum += state[7] * 0xe8d1b2b21b41429c;
-                d_sum += state[8] * 0xa1b67f09d4b3ccb8;
-                d_sum += state[9] * 0x0e1adf8b84437180;
-                d_sum += state[10] * 0x0d593a5e584af47b;
-                d_sum += state[11] * 0xa023d94c56e151c7;
+                d_sum += state[1] * 0xc15acf44759545a3
+                    + state[2] * 0xcbfdcf39869719d4
+                    + state[3] * 0x33f62042e2f80225
+                    + state[4] * 0x2599c5ead81d8fa3
+                    + state[5] * 0x0b306cb6c1d7c8d0
+                    + state[6] * 0x658c80d3df3729b1
+                    + state[7] * 0xe8d1b2b21b41429c
+                    + state[8] * 0xa1b67f09d4b3ccb8
+                    + state[9] * 0x0e1adf8b84437180
+                    + state[10] * 0x0d593a5e584af47b
+                    + state[11] * 0xa023d94c56e151c7;
             } else if (r == 18) {
-                d_sum += state[1] * 0x49026cc3a4afc5a6;
-                d_sum += state[2] * 0xe06dff00ab25b91b;
-                d_sum += state[3] * 0x0ab38c561e8850ff;
-                d_sum += state[4] * 0x92c3c8275e105eeb;
-                d_sum += state[5] * 0xb65256e546889bd0;
-                d_sum += state[6] * 0x3c0468236ea142f6;
-                d_sum += state[7] * 0xee61766b889e18f2;
-                d_sum += state[8] * 0xa206f41b12c30415;
-                d_sum += state[9] * 0x02fe9d756c9f12d1;
-                d_sum += state[10] * 0xe9633210630cbf12;
-                d_sum += state[11] * 0x1ffea9fe85a0b0b1;
+                d_sum += state[1] * 0x49026cc3a4afc5a6
+                    + state[2] * 0xe06dff00ab25b91b
+                    + state[3] * 0x0ab38c561e8850ff
+                    + state[4] * 0x92c3c8275e105eeb
+                    + state[5] * 0xb65256e546889bd0
+                    + state[6] * 0x3c0468236ea142f6
+                    + state[7] * 0xee61766b889e18f2
+                    + state[8] * 0xa206f41b12c30415
+                    + state[9] * 0x02fe9d756c9f12d1
+                    + state[10] * 0xe9633210630cbf12
+                    + state[11] * 0x1ffea9fe85a0b0b1;
             } else if (r == 19) {
-                d_sum += state[1] * 0x81d1ae8cc50240f3;
-                d_sum += state[2] * 0xf4c77a079a4607d7;
-                d_sum += state[3] * 0xed446b2315e3efc1;
-                d_sum += state[4] * 0x0b0a6b70915178c3;
-                d_sum += state[5] * 0xb11ff3e089f15d9a;
-                d_sum += state[6] * 0x1d4dba0b7ae9cc18;
-                d_sum += state[7] * 0x65d74e2f43b48d05;
-                d_sum += state[8] * 0xa2df8c6b8ae0804a;
-                d_sum += state[9] * 0xa4e6f0a8c33348a6;
-                d_sum += state[10] * 0xc0a26efc7be5669b;
-                d_sum += state[11] * 0xa6b6582c547d0d60;
+                d_sum += state[1] * 0x81d1ae8cc50240f3
+                    + state[2] * 0xf4c77a079a4607d7
+                    + state[3] * 0xed446b2315e3efc1
+                    + state[4] * 0x0b0a6b70915178c3
+                    + state[5] * 0xb11ff3e089f15d9a
+                    + state[6] * 0x1d4dba0b7ae9cc18
+                    + state[7] * 0x65d74e2f43b48d05
+                    + state[8] * 0xa2df8c6b8ae0804a
+                    + state[9] * 0xa4e6f0a8c33348a6
+                    + state[10] * 0xc0a26efc7be5669b
+                    + state[11] * 0xa6b6582c547d0d60;
             } else if (r == 20) {
-                d_sum += state[1] * 0x84afc741f1c13213;
-                d_sum += state[2] * 0x2f8f43734fc906f3;
-                d_sum += state[3] * 0xde682d72da0a02d9;
-                d_sum += state[4] * 0x0bb005236adb9ef2;
-                d_sum += state[5] * 0x5bdf35c10a8b5624;
-                d_sum += state[6] * 0x0739a8a343950010;
-                d_sum += state[7] * 0x52f515f44785cfbc;
-                d_sum += state[8] * 0xcbaf4e5d82856c60;
-                d_sum += state[9] * 0xac9ea09074e3e150;
-                d_sum += state[10] * 0x8f0fa011a2035fb0;
-                d_sum += state[11] * 0x1a37905d8450904a;
+                d_sum += state[1] * 0x84afc741f1c13213
+                    + state[2] * 0x2f8f43734fc906f3
+                    + state[3] * 0xde682d72da0a02d9
+                    + state[4] * 0x0bb005236adb9ef2
+                    + state[5] * 0x5bdf35c10a8b5624
+                    + state[6] * 0x0739a8a343950010
+                    + state[7] * 0x52f515f44785cfbc
+                    + state[8] * 0xcbaf4e5d82856c60
+                    + state[9] * 0xac9ea09074e3e150
+                    + state[10] * 0x8f0fa011a2035fb0
+                    + state[11] * 0x1a37905d8450904a;
             } else if (r == 21) {
-                d_sum += state[1] * 0x3abeb80def61cc85;
-                d_sum += state[2] * 0x9d19c9dd4eac4133;
-                d_sum += state[3] * 0x075a652d9641a985;
-                d_sum += state[4] * 0x9daf69ae1b67e667;
-                d_sum += state[5] * 0x364f71da77920a18;
-                d_sum += state[6] * 0x50bd769f745c95b1;
-                d_sum += state[7] * 0xf223d1180dbbf3fc;
-                d_sum += state[8] * 0x2f885e584e04aa99;
-                d_sum += state[9] * 0xb69a0fa70aea684a;
-                d_sum += state[10] * 0x09584acaa6e062a0;
-                d_sum += state[11] * 0x0bc051640145b19b;
+                d_sum += state[1] * 0x3abeb80def61cc85
+                    + state[2] * 0x9d19c9dd4eac4133
+                    + state[3] * 0x075a652d9641a985
+                    + state[4] * 0x9daf69ae1b67e667
+                    + state[5] * 0x364f71da77920a18
+                    + state[6] * 0x50bd769f745c95b1
+                    + state[7] * 0xf223d1180dbbf3fc
+                    + state[8] * 0x2f885e584e04aa99
+                    + state[9] * 0xb69a0fa70aea684a
+                    + state[10] * 0x09584acaa6e062a0
+                    + state[11] * 0x0bc051640145b19b;
             }
 
             new_state[0] = mod(d_sum);
