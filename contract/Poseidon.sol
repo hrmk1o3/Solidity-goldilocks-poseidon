@@ -563,18 +563,7 @@ contract Poseidon {
                     + state[9] * 0x463f9ee03d290810
                     + state[10] * 0xc810936e64982542
                     + state[11] * 0x043b1c289f7bc3ac;
-                // TODO: Rewrite to reduce 520 gas.
-                // d_sum += state[1] * 0x3d999c961b7c63b0
-                //     + state[2] * 0x814e82efcd172529
-                //     + state[3] * 0x2421e5d236704588
-                //     + state[4] * 0x887af7d4dd482328
-                //     + state[5] * 0xa5e9c291f6119b27
-                //     + state[6] * 0xbdc52b2676a4b4aa
-                //     + state[7] * 0x64832009d29bcf57
-                //     + state[8] * 0x09c4155174a552cc
-                //     + state[9] * 0x463f9ee03d290810
-                //     + state[10] * 0xc810936e64982542
-                //     + state[11] * 0x043b1c289f7bc3ac;
+                // TODO: Rewrite to reduce gas.
                 // new_state[0] = mod(d_sum);
                 // new_state[1] = mod(state[1] + state[0] * 0x94877900674181c3);
                 // new_state[2] = mod(state[2] + state[0] * 0xc6c67cc37a2a2bbd);
