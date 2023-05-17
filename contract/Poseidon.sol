@@ -1133,7 +1133,7 @@ contract Poseidon {
         state[9] = add(state[9], FAST_PARTIAL_FIRST_ROUND_CONSTANT_9);
         state[10] = add(state[10], FAST_PARTIAL_FIRST_ROUND_CONSTANT_10);
         state[11] = add(state[11], FAST_PARTIAL_FIRST_ROUND_CONSTANT_11);
-        state[0] = add(state[0], FAST_PARTIAL_FIRST_ROUND_CONSTANT_0);
+       // state[0] = add(state[0], FAST_PARTIAL_FIRST_ROUND_CONSTANT_0);
 
         // _mds_partial_layer_init
         // for (uint256 c = 1; c < WIDTH; c++) {
@@ -1153,7 +1153,7 @@ contract Poseidon {
         new_state[10] = _mds_partial_layer_init_10(state);
         new_state[11] = _mds_partial_layer_init_11(state);
         new_state[2] = _mds_partial_layer_init_2(state);
-        new_state[0] = state[0];
+        new_state[0] = add(state[0], FAST_PARTIAL_FIRST_ROUND_CONSTANT_0);
     }
 
     function _getRoundConstant(uint256 index) private pure returns (uint256) {
