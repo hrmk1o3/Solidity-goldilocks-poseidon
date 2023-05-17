@@ -985,7 +985,7 @@ contract Poseidon {
     // 26743 gas (Can be improved to 469 gas if all are expanded to inline.)
     function _constant_layer(uint256[WIDTH] memory state, uint256 round_ctr)
         internal
-        view
+        pure
         returns (uint256[WIDTH] memory new_state)
     {
         unchecked {
@@ -1006,16 +1006,6 @@ contract Poseidon {
             // new_state[10] = add(state[10], ALL_ROUND_CONSTANTS[base_index + 10]);
             // new_state[11] = add(state[11], ALL_ROUND_CONSTANTS[base_index + 11]);
 
-            // 最初442004
-            // mappingにしてみたら446484
-            // 関数呼び出しするようになり、445437 (10こ)
-            // 442652 (20こ)
-            // 437567 (30こ)
-            // 430182 (40こ)　21.36kb
-            // 426956 (50こ)　21.59
-            // 437996 (60こ)　21.82
-            // 449036 (70こ) 22.05
-            // 460076 (80こ)　22.28
             new_state[0] = add(state[0], _get_all_around_constants(base_index));
             new_state[1] = add(state[1], _get_all_around_constants(base_index + 1));
             new_state[2] = add(state[2], _get_all_around_constants(base_index + 2));
@@ -1031,46 +1021,7 @@ contract Poseidon {
         }
     }
 
-    // TODO 最終的にpureにすること
-    // pureにした後、もう一度if文連結してみること
     function _get_all_around_constants(uint256 index) private pure returns (uint256 result) {
-        // if文を360繋げるとガスコストが50を境に高くなる。
-        // なので、50区切り
-        // 50 372812  21.631
-        // 100 375836 22.804
-        // 150 378860 23.977
-
-        // 40区切り
-        // 40 381672
-        // 80 368980
-        // 120 372004
-        // 160 375028 
-
-        // 30区切り
-        // 30 394817
-        // 60 364550
-        // 90 367574
-        // 120 370598
-        // 150 373622
-
-        // 20区切り
-        // 20 410262
-        // 40 377260
-        // 60 364568
-        // 80 367592
-        // 100 370616
-        // 120 373640
-        // 140 376664 23.839 
-        // 160 379688 24.322
-        // 180 382712 24.805
-        // 200 385736
-        // 240 391784
-        // 260 394808
-        // 280 397832
-        // 300 400856
-        // 320 389868
-        // 340 354598
-        // 360 316828 29.213
         if (index >= 0 && index <= 19){
             if (index == 0) {
                 return 0xb585f766f2144405;
@@ -1887,7 +1838,7 @@ contract Poseidon {
 
     function _full_rounds(uint256[WIDTH] memory state, uint256 round_ctr)
         internal
-        view
+        pure
         returns (uint256[WIDTH] memory, uint256)
     {
         unchecked {
