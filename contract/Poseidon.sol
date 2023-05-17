@@ -46,12 +46,6 @@ contract Poseidon {
         }
     }
 
-    function mul(uint256 a, uint256 b) internal pure returns (uint256 res) {
-        assembly {
-            res := mulmod(a, b, ORDER)
-        }
-    }
-
     function add(uint256 a, uint256 b) internal pure returns (uint256 res) {
         assembly {
             res := addmod(a, b, ORDER)
