@@ -475,6 +475,7 @@ name = "solidity-goldilocks-poseidon"
 version = "0.1.0"
 dependencies = [
  "plonky2",
+ "rand",
 ]
 
 [[package]]
