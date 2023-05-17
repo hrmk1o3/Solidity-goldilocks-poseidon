@@ -1156,116 +1156,198 @@ contract Poseidon {
         new_state[0] = add(state[0], FAST_PARTIAL_FIRST_ROUND_CONSTANT_0);
     }
 
-    function _getRoundConstant(uint256 index) private pure returns (uint256) {
-        // return ALL_ROUND_CONSTANTS[index];
-        if (index < 24) {
-            if (index < 12) {
-                if (index == 0) return 0xb585f766f2144405;
-                else if (index == 1) return 0x7746a55f43921ad7;
-                else if (index == 2) return 0xb2fb0d31cee799b4;
-                else if (index == 3) return 0x0f6760a4803427d7;
-                else if (index == 4) return 0xe10d666650f4e012;
-                else if (index == 5) return 0x8cae14cb07d09bf1;
-                else if (index == 6) return 0xd438539c95f63e9f;
-                else if (index == 7) return 0xef781c7ce35b4c3d;
-                else if (index == 8) return 0xcdc4a239b0c44426;
-                else if (index == 9) return 0x277fa208bf337bff;
-                else if (index == 10) return 0xe17653a29da578a1;
-                else /* if (index == 11) */ return 0xc54302f225db2c76;
+    function _getRoundConstant(uint256 index) private pure returns (uint256 roundConstant) {
+        if (index < 48) {
+            if (index < 24) {
+                if (index < 12) {
+                    if (index < 4) {
+                        if (index < 2) {
+                            if (index == 0) return 0xb585f766f2144405;
+                            /* if (index == 1) */ return 0x7746a55f43921ad7;
+                        }
+                        if (index == 2) return 0xb2fb0d31cee799b4;
+                        /* if (index == 3) */ return 0x0f6760a4803427d7;
+                    }
+                    if (index < 8) {
+                        if (index < 6) {
+                            if (index == 4) return 0xe10d666650f4e012;
+                            /* if (index == 5) */ return 0x8cae14cb07d09bf1;
+                        }
+                        if (index == 6) return 0xd438539c95f63e9f;
+                        /* if (index == 7) */ return 0xef781c7ce35b4c3d;
+                    }
+                    if (index < 10) {
+                        if (index == 8) return 0xcdc4a239b0c44426;
+                        /* if (index == 9) */ return 0x277fa208bf337bff;
+                    }
+                    if (index == 10) return 0xe17653a29da578a1;
+                    /* if (index == 11) */ return 0xc54302f225db2c76;
+                }
+                if (index < 16) {
+                    if (index < 14) {
+                        if (index == 12) return 0x86287821f722c881;
+                        /* if (index == 13) */ return 0x59cd1a8a41c18e55;
+                    }
+                    if (index == 14) return 0xc3b919ad495dc574;
+                    /* if (index == 15) */ return 0xa484c4c5ef6a0781;
+                }
+                if (index < 20) {
+                    if (index < 18) {
+                        if (index == 16) return 0x308bbd23dc5416cc;
+                        /* if (index == 17) */ return 0x6e4a40c18f30c09c;
+                    }
+                    if (index == 18) return 0x9a2eedb70d8f8cfa;
+                    /* if (index == 19) */ return 0xe360c6e0ae486f38;
+                }
+                if (index < 22) {
+                    if (index == 20) return 0xd5c7718fbfc647fb;
+                    /* if (index == 21) */ return 0xc35eae071903ff0b;
+                }
+                if (index == 22) return 0x849c2656969c4be7;
+                /* if (index == 23) */ return 0xc0572c8c08cbbbad;
             }
-            else if (index == 12) return 0x86287821f722c881;
-            else if (index == 13) return 0x59cd1a8a41c18e55;
-            else if (index == 14) return 0xc3b919ad495dc574;
-            else if (index == 15) return 0xa484c4c5ef6a0781;
-            else if (index == 16) return 0x308bbd23dc5416cc;
-            else if (index == 17) return 0x6e4a40c18f30c09c;
-            else if (index == 18) return 0x9a2eedb70d8f8cfa;
-            else if (index == 19) return 0xe360c6e0ae486f38;
-            else if (index == 20) return 0xd5c7718fbfc647fb;
-            else if (index == 21) return 0xc35eae071903ff0b;
-            else if (index == 22) return 0x849c2656969c4be7;
-            else /* if (index == 23) */ return 0xc0572c8c08cbbbad;
-        } else if (index < 312) {
             if (index < 36) {
-                if (index == 24) return 0xe9fa634a21de0082;
-                else if (index == 25) return 0xf56f6d48959a600d;
-                else if (index == 26) return 0xf7d713e806391165;
-                else if (index == 27) return 0x8297132b32825daf;
-                else if (index == 28) return 0xad6805e0e30b2c8a;
-                else if (index == 29) return 0xac51d9f5fcf8535e;
-                else if (index == 30) return 0x502ad7dc18c2ad87;
-                else if (index == 31) return 0x57a1550c110b3041;
-                else if (index == 32) return 0x66bbd30e6ce0e583;
-                else if (index == 33) return 0x0da2abef589d644e;
-                else if (index == 34) return 0xf061274fdb150d61;
-                else /* if (index == 35) */ return 0x28b8ec3ae9c29633;
+                if (index < 28) {
+                    if (index < 26) {
+                        if (index == 24) return 0xe9fa634a21de0082;
+                        /* if (index == 25) */ return 0xf56f6d48959a600d;
+                    }
+                    if (index == 26) return 0xf7d713e806391165;
+                    /* if (index == 27) */ return 0x8297132b32825daf;
+                }
+                if (index < 32) {
+                    if (index < 30) {
+                        if (index == 28) return 0xad6805e0e30b2c8a;
+                        /* if (index == 29) */ return 0xac51d9f5fcf8535e;
+                    }
+                    if (index == 30) return 0x502ad7dc18c2ad87;
+                    /* if (index == 31) */ return 0x57a1550c110b3041;
+                }
+                if (index < 34) {
+                    if (index == 32) return 0x66bbd30e6ce0e583;
+                    /* if (index == 33) */ return 0x0da2abef589d644e;
+                }
+                if (index == 34) return 0xf061274fdb150d61;
+                /* if (index == 35) */ return 0x28b8ec3ae9c29633;
             }
-            else if (index == 36) return 0x92a756e67e2b9413;
-            else if (index == 37) return 0x70e741ebfee96586;
-            else if (index == 38) return 0x019d5ee2af82ec1c;
-            else if (index == 39) return 0x6f6f2ed772466352;
-            else if (index == 40) return 0x7cf416cfe7e14ca1;
-            else if (index == 41) return 0x61df517b86a46439;
-            else if (index == 42) return 0x85dc499b11d77b75;
-            else if (index == 43) return 0x4b959b48b9c10733;
-            else if (index == 44) return 0xe8be3e5da8043e57;
-            else if (index == 45) return 0xf5c0bc1de6da8699;
-            else if (index == 46) return 0x40b12cbf09ef74bf;
-            else if (index == 47) return 0xa637093ecb2ad631;
-        } else if (index < 336) {
-            if (index < 324) {
-                if (index == 312) return 0x475cd3205a3bdcde;
-                else if (index == 313) return 0x18a42105c31b7e88;
-                else if (index == 314) return 0x023e7414af663068;
-                else if (index == 315) return 0x15147108121967d7;
-                else if (index == 316) return 0xe4a3dff1d7d6fef9;
-                else if (index == 317) return 0x01a8d1a588085737;
-                else if (index == 318) return 0x11b4c74eda62beef;
-                else if (index == 319) return 0xe587cc0d69a73346;
-                else if (index == 320) return 0x1ff7327017aa2a6e;
-                else if (index == 321) return 0x594e29c42473d06b;
-                else if (index == 322) return 0xf6f31db1899b12d5;
-                else /* if (index == 323) */ return 0xc02ac5e47312d3ca;
+            if (index < 40) {
+                if (index < 38) {
+                    if (index == 36) return 0x92a756e67e2b9413;
+                    /* if (index == 37) */ return 0x70e741ebfee96586;
+                }
+                if (index == 38) return 0x019d5ee2af82ec1c;
+                /* if (index == 39) */ return 0x6f6f2ed772466352;
             }
-            else if (index == 324) return 0xe70201e960cb78b8;
-            else if (index == 325) return 0x6f90ff3b6a65f108;
-            else if (index == 326) return 0x42747a7245e7fa84;
-            else if (index == 327) return 0xd1f507e43ab749b2;
-            else if (index == 328) return 0x1c86d265f15750cd;
-            else if (index == 329) return 0x3996ce73dd832c1c;
-            else if (index == 330) return 0x8e7fba02983224bd;
-            else if (index == 331) return 0xba0dec7103255dd4;
-            else if (index == 332) return 0x9e9cbd781628fc5b;
-            else if (index == 333) return 0xdae8645996edd6a5;
-            else if (index == 334) return 0xdebe0853b1a1d378;
-            else /* if (index == 345) */ return 0xa49229d24d014343;
-        } else if (index < 348) {
-            if (index == 336) return 0x7be5b9ffda905e1c;
-            else if (index == 337) return 0xa3c95eaec244aa30;
-            else if (index == 338) return 0x0230bca8f4df0544;
-            else if (index == 339) return 0x4135c2bebfe148c6;
-            else if (index == 340) return 0x166fc0cc438a3c72;
-            else if (index == 341) return 0x3762b59a8ae83efa;
-            else if (index == 342) return 0xe8928a4c89114750;
-            else if (index == 343) return 0x2a440b51a4945ee5;
-            else if (index == 344) return 0x80cefd2b7d99ff83;
-            else if (index == 345) return 0xbb9879c6e61fd62a;
-            else if (index == 346) return 0x6e7c8f1a84265034;
-            else /* if (index == 347) */ return 0x164bb2de1bbeddc8;
+            if (index < 44) {
+                if (index < 42) {
+                    if (index == 40) return 0x7cf416cfe7e14ca1;
+                    /* if (index == 41) */ return 0x61df517b86a46439;
+                }
+                if (index == 42) return 0x85dc499b11d77b75;
+                /* if (index == 43) */ return 0x4b959b48b9c10733;
+            }
+            if (index < 46) {
+                if (index == 44) return 0xe8be3e5da8043e57;
+                /* if (index == 45) */ return 0xf5c0bc1de6da8699;
+            }
+            if (index == 46) return 0x40b12cbf09ef74bf;
+            /* if (index == 47) */ return 0xa637093ecb2ad631;
         }
-        else if (index == 348) return 0xf3c12fe54d5c653b;
-        else if (index == 349) return 0x40b9e922ed9771e2;
-        else if (index == 350) return 0x551f5b0fbe7b1840;
-        else if (index == 351) return 0x25032aa7c4cb1811;
-        else if (index == 352) return 0xaaed34074b164346;
-        else if (index == 353) return 0x8ffd96bbf9c9c81d;
-        else if (index == 354) return 0x70fc91eb5937085c;
-        else if (index == 355) return 0x7f795e2a5f915440;
-        else if (index == 356) return 0x4543d9df5476d3cb;
-        else if (index == 357) return 0xf172d73e004fc90d;
-        else if (index == 358) return 0xdfd1c4febcc81238;
-        else /* if (index == 359) */ return 0xbc8dfb627fe558fc;
-        revert("illegal index");
+        if (index < 72) {
+            if (index < 60) {
+                if (index < 52) {
+                    if (index < 50) {
+                        if (index == 48) return 0x475cd3205a3bdcde;
+                        /* if (index == 49) */ return 0x18a42105c31b7e88;
+                    }
+                    if (index == 50) return 0x023e7414af663068;
+                    /* if (index == 51) */ return 0x15147108121967d7;
+                }
+                if (index < 56) {
+                    if (index < 54) {
+                        if (index == 52) return 0xe4a3dff1d7d6fef9;
+                        /* if (index == 53) */ return 0x01a8d1a588085737;
+                    }
+                    if (index == 54) return 0x11b4c74eda62beef;
+                    /* if (index == 55) */ return 0xe587cc0d69a73346;
+                }
+                if (index < 58) {
+                    if (index == 56) return 0x1ff7327017aa2a6e;
+                    /* if (index == 57) */ return 0x594e29c42473d06b;
+                }
+                if (index == 58) return 0xf6f31db1899b12d5;
+                /* if (index == 59) */ return 0xc02ac5e47312d3ca;
+            }
+            if (index < 64) {
+                if (index < 62) {
+                    if (index == 60) return 0xe70201e960cb78b8;
+                    /* if (index == 61) */ return 0x6f90ff3b6a65f108;
+                }
+                if (index == 62) return 0x42747a7245e7fa84;
+                /* if (index == 63) */ return 0xd1f507e43ab749b2;
+            }
+            if (index < 68) {
+                if (index < 66) {
+                    if (index == 64) return 0x1c86d265f15750cd;
+                    /* if (index == 65) */ return 0x3996ce73dd832c1c;
+                }
+                if (index == 66) return 0x8e7fba02983224bd;
+                /* if (index == 67) */ return 0xba0dec7103255dd4;
+            }
+            if (index < 70) {
+                if (index == 68) return 0x9e9cbd781628fc5b;
+                /* if (index == 69) */ return 0xdae8645996edd6a5;
+            }
+            if (index == 70) return 0xdebe0853b1a1d378;
+            /* if (index == 71) */ return 0xa49229d24d014343;
+        }
+        if (index < 84) {
+            if (index < 76) {
+                if (index < 74) {
+                    if (index == 72) return 0x7be5b9ffda905e1c;
+                    /* if (index == 73) */ return 0xa3c95eaec244aa30;
+                }
+                if (index == 74) return 0x0230bca8f4df0544;
+                /* if (index == 75) */ return 0x4135c2bebfe148c6;
+            }
+            if (index < 80) {
+                if (index < 78) {
+                    if (index == 76) return 0x166fc0cc438a3c72;
+                    /* if (index == 77) */ return 0x3762b59a8ae83efa;
+                }
+                if (index == 78) return 0xe8928a4c89114750;
+                /* if (index == 79) */ return 0x2a440b51a4945ee5;
+            }
+            if (index < 82) {
+                if (index == 80) return 0x80cefd2b7d99ff83;
+                /* if (index == 81) */ return 0xbb9879c6e61fd62a;
+            }
+            if (index == 82) return 0x6e7c8f1a84265034;
+            /* if (index == 83) */ return 0x164bb2de1bbeddc8;
+        }
+        if (index < 88) {
+            if (index < 86) {
+                if (index == 84) return 0xf3c12fe54d5c653b;
+                /* if (index == 85) */ return 0x40b9e922ed9771e2;
+            }
+            if (index == 86) return 0x551f5b0fbe7b1840;
+            /* if (index == 87) */ return 0x25032aa7c4cb1811;
+        }
+        if (index < 92) {
+            if (index < 90) {
+                if (index == 88) return 0xaaed34074b164346;
+                /* if (index == 89) */ return 0x8ffd96bbf9c9c81d;
+            }
+            if (index == 90) return 0x70fc91eb5937085c;
+            /* if (index == 91) */ return 0x7f795e2a5f915440;
+        }
+        if (index < 94) {
+            if (index == 92) return 0x4543d9df5476d3cb;
+            /* if (index == 93) */ return 0xf172d73e004fc90d;
+        }
+        if (index == 94) return 0xdfd1c4febcc81238;
+        /* if (index == 95) */ return 0xbc8dfb627fe558fc;
+        // revert("illegal index");
     }
 
     // `state[i]` allows 200 bits number.
@@ -1408,10 +1490,10 @@ contract Poseidon {
         }
 
         // second full rounds
-        state = _mds_sbox_layer(_constant_layer(state, 26));
-        state = _mds_sbox_layer(_constant_layer(state, 27));
-        state = _mds_sbox_layer(_constant_layer(state, 28));
-        state = _mds_sbox_layer(_constant_layer(state, 29));
+        state = _mds_sbox_layer(_constant_layer(state, 4));
+        state = _mds_sbox_layer(_constant_layer(state, 5));
+        state = _mds_sbox_layer(_constant_layer(state, 6));
+        state = _mds_sbox_layer(_constant_layer(state, 7));
 
         return state;
     }

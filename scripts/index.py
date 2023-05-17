@@ -324,21 +324,87 @@ def make_mds_partial_layer_init_inner(prefix=''):
     return tmp
 
 
-def make_all_round_constants(prefix=''):
-    i = 0
+# def make_get_round_constant_inner(prefix=''):
+#     i = 0
+#     tmp = prefix + \
+#         f'if (index == {i}) return {ALL_ROUND_CONSTANTS[i]};'
+
+#     for i in range(1, 48):
+#         tmp += prefix + \
+#             f'else if (index == {i}) return {ALL_ROUND_CONSTANTS[i]};'
+
+#     for i in range(312, 360):
+#         tmp += prefix + \
+#             f'else if (index == {i - 12 * 22}) return {ALL_ROUND_CONSTANTS[i]};'
+
+#     tmp += prefix + 'revert("illegal index");'
+
+#     return tmp
+
+
+def loop_get_round_constant_for_hash_offset(base_index_2, base_index_1, base_index_0, hash_offset, prefix=''):
+    base_index = 48 * base_index_2 + 24 * base_index_1 + 12 * base_index_0
+    tmp = prefix + f'if (index < {base_index + 4 * hash_offset + 2}) ' + '{' \
+        + prefix + INDENT + f'if (index == {base_index + 4 * hash_offset}) return {ALL_ROUND_CONSTANTS[base_index + 4 * hash_offset + base_index_2 * 12 * 22]};' \
+        + prefix + INDENT + f'/* if (index == {base_index + 4 * hash_offset + 1}) */ return {ALL_ROUND_CONSTANTS[base_index + 4 * hash_offset + 1 + base_index_2 * 12 * 22]};' \
+        + prefix + '}' \
+        + prefix + f'if (index == {base_index + 4 * hash_offset + 2}) return {ALL_ROUND_CONSTANTS[base_index + 4 * hash_offset + 2 + base_index_2 * 12 * 22]};' \
+        + prefix + f'/* if (index == {base_index + 4 * hash_offset + 3}) */ return {ALL_ROUND_CONSTANTS[base_index + 4 * hash_offset + 3 + base_index_2 * 12 * 22]};'
+
+    return tmp
+
+
+def loop_get_round_constant_for_base_index_0(base_index_2, base_index_1, base_index_0, prefix=''):
+    base_index = 48 * base_index_2 + 24 * base_index_1 + 12 * base_index_0;
+    tmp = ''
+    for hash_offset in range(0, 2):
+        tmp += prefix + f'if (index < {base_index + 4 * (hash_offset + 1)}) ' + '{' \
+            + loop_get_round_constant_for_hash_offset(
+                base_index_2, base_index_1, base_index_0, hash_offset, prefix=prefix + INDENT) \
+            + prefix + '}'
+
+    hash_offset = 2
+    tmp += loop_get_round_constant_for_hash_offset(
+            base_index_2, base_index_1, base_index_0, hash_offset, prefix=prefix)
+
+    return tmp
+
+
+def loop_get_round_constant_for_base_index_1(base_index_2, base_index_1, prefix=''):
+    tmp = prefix + f'if (index < {48 * base_index_2 + 24 * base_index_1 + 12 * (0 + 1)}) ' + '{' \
+        + loop_get_round_constant_for_base_index_0(
+            base_index_2, base_index_1, 0, prefix=prefix + INDENT) \
+        + prefix + '}' \
+        + loop_get_round_constant_for_base_index_0(
+            base_index_2, base_index_1, 1, prefix=prefix)
+
+    return tmp
+
+def loop_get_round_constant_for_base_index_2(base_index_2, prefix=''):
+    tmp = prefix + f'if (index < {48 * base_index_2 + 24 * (0 + 1)}) ' + '{' \
+        + loop_get_round_constant_for_base_index_1(
+            base_index_2, 0, prefix=prefix + INDENT) \
+        + prefix + '}' \
+        + loop_get_round_constant_for_base_index_1(
+            base_index_2, 1, prefix=prefix)
+
+    return tmp
+
+
+def make_get_round_constant_inner(prefix=''):
+    tmp = prefix + f'if (index < {48 * (0 + 1)}) ' + '{' \
+        + loop_get_round_constant_for_base_index_2(0, prefix=prefix + INDENT) \
+        + prefix + '}' \
+        + loop_get_round_constant_for_base_index_2(1, prefix=prefix)
+
+    tmp += prefix + '// revert("illegal index");'
+
+    return tmp
+
+
+def make_get_round_constant(prefix=''):
     tmp = prefix + 'function _getRoundConstant(uint256 index) private pure returns (uint256 roundConstant) {' \
-        + prefix + INDENT + \
-        f'if (index == {i}) return {ALL_ROUND_CONSTANTS[i]};'
-
-    for i in range(1, 48):
-        tmp += prefix + INDENT + \
-            f'else if (index == {i}) return {ALL_ROUND_CONSTANTS[i]};'
-
-    for i in range(312, 360):
-        tmp += prefix + INDENT + \
-            f'else if (index == {i}) return {ALL_ROUND_CONSTANTS[i]};'
-
-    tmp += prefix + INDENT + 'revert("illegal index");' \
+        + make_get_round_constant_inner(prefix=prefix + INDENT) \
         + prefix + '}'
 
     return tmp
@@ -400,8 +466,7 @@ def make_mds_row_shf_inner(r, prefix=''):
 if __name__ == '__main__':
     # tmp = make_get_fast_partial_round_initial_matrix(prefix='\n' + INDENT) + '\n'
     # tmp = make_mds_partial_layer_init_inner(prefix='\n' + INDENT + INDENT) + '\n'
-    # tmp = make_all_round_constants(prefix='\n' + INDENT) + '\n'
+    tmp = make_get_round_constant(prefix='\n' + INDENT) + '\n'
     # tmp = make_partial_rounds(prefix='\n' + INDENT) + '\n'
-    tmp = make_mds_row_shf_inner(
-        11, prefix='\n' + INDENT + INDENT + INDENT) + '\n'
+    # tmp = make_mds_row_shf_inner(11, prefix='\n' + INDENT + INDENT + INDENT) + '\n'
     print(tmp)
