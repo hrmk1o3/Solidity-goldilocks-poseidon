@@ -40,398 +40,6 @@ contract Poseidon {
     uint256 constant FAST_PARTIAL_FIRST_ROUND_CONSTANT_10 = 0x60936af96ee2f148;
     uint256 constant FAST_PARTIAL_FIRST_ROUND_CONSTANT_11 = 0xc33448feadc78f0c;
 
-    uint256[360] ALL_ROUND_CONSTANTS = [
-        0xb585f766f2144405,
-        0x7746a55f43921ad7,
-        0xb2fb0d31cee799b4,
-        0x0f6760a4803427d7,
-        0xe10d666650f4e012,
-        0x8cae14cb07d09bf1,
-        0xd438539c95f63e9f,
-        0xef781c7ce35b4c3d,
-        0xcdc4a239b0c44426,
-        0x277fa208bf337bff,
-        0xe17653a29da578a1,
-        0xc54302f225db2c76,
-        0x86287821f722c881,
-
-        0x59cd1a8a41c18e55,
-        0xc3b919ad495dc574,
-        0xa484c4c5ef6a0781,
-        0x308bbd23dc5416cc,
-        0x6e4a40c18f30c09c,
-        0x9a2eedb70d8f8cfa,
-        0xe360c6e0ae486f38,
-        0xd5c7718fbfc647fb, //20
-
-
-        0xc35eae071903ff0b,
-        0x849c2656969c4be7,
-        0xc0572c8c08cbbbad,
-        0xe9fa634a21de0082,
-        0xf56f6d48959a600d,
-        0xf7d713e806391165,
-        0x8297132b32825daf,
-        0xad6805e0e30b2c8a,
-        0xac51d9f5fcf8535e,
-        0x502ad7dc18c2ad87, // 30
-
-
-        0x57a1550c110b3041,
-        0x66bbd30e6ce0e583,
-        0x0da2abef589d644e,
-        0xf061274fdb150d61,
-        0x28b8ec3ae9c29633,
-        0x92a756e67e2b9413,
-        0x70e741ebfee96586,
-        0x019d5ee2af82ec1c,
-        0x6f6f2ed772466352,
-        0x7cf416cfe7e14ca1, // 40
-
-        0x61df517b86a46439,
-        0x85dc499b11d77b75,
-        0x4b959b48b9c10733,
-        0xe8be3e5da8043e57,
-        0xf5c0bc1de6da8699,
-        0x40b12cbf09ef74bf,
-        0xa637093ecb2ad631,
-        0x3cc3f892184df408,
-        0x2e479dc157bf31bb,
-        0x6f49de07a6234346, // 50
-
-
-        0x213ce7bede378d7b,
-        0x5b0431345d4dea83,
-        0xa2de45780344d6a1,
-        0x7103aaf94a7bf308,
-        0x5326fc0d97279301,
-        0xa9ceb74fec024747,
-        0x27f8ec88bb21b1a3,
-        0xfceb4fda1ded0893,
-        0xfac6ff1346a41675,
-        0x7131aa45268d7d8c, // 60
-
-
-
-        0x9351036095630f9f,
-        0xad535b24afc26bfb,
-        0x4627f5c6993e44be,
-        0x645cf794b8f1cc58,
-        0x241c70ed0af61617,
-        0xacb8e076647905f1,
-        0x3737e9db4c4f474d,
-        0xe7ea5e33e75fffb6,
-        0x90dee49fc9bfc23a,
-        0xd1b1edf76bc09c92, // 70
-
-
-        0x0b65481ba645c602,
-        0x99ad1aab0814283b,
-        0x438a7c91d416ca4d,
-        0xb60de3bcc5ea751c,
-        0xc99cab6aef6f58bc,
-        0x69a5ed92a72ee4ff,
-        0x5e7b329c1ed4ad71,
-        0x5fc0ac0800144885,
-        0x32db829239774eca,
-        0x0ade699c5830f310, // 80
-
-
-        0x7cc5583b10415f21,
-        0x85df9ed2e166d64f,
-        0x6604df4fee32bcb1,
-        0xeb84f608da56ef48,
-        0xda608834c40e603d,
-        0x8f97fe408061f183,
-        0xa93f485c96f37b89,
-        0x6704e8ee8f18d563,
-        0xcee3e9ac1e072119,
-        0x510d0e65e2b470c1, // 90
-
-
-        0xf6323f486b9038f0,
-        0x0b508cdeffa5ceef,
-        0xf2417089e4fb3cbd,
-        0x60e75c2890d15730,
-        0xa6217d8bf660f29c,
-        0x7159cd30c3ac118e,
-        0x839b4e8fafead540,
-        0x0d3f3e5e82920adc,
-        0x8f7d83bddee7bba8, // 99
-
-
-        0x780f2243ea071d06,
-        0xeb915845f3de1634,
-        0xd19e120d26b6f386,
-        0x016ee53a7e5fecc6,
-        0xcb5fd54e7933e477,
-        0xacb8417879fd449f,
-        0x9c22190be7f74732,
-        0x5d693c1ba3ba3621,
-        0xdcef0797c2b69ec7,
-        0x3d639263da827b13,// 109
-
-
-        0xe273fd971bc8d0e7,
-        0x418f02702d227ed5,
-        0x8c25fda3b503038c,
-        0x2cbaed4daec8c07c,
-        0x5f58e6afcdd6ddc2,
-        0x284650ac5e1b0eba,
-        0x635b337ee819dab5,
-        0x9f9a036ed4f2d49f,
-        0xb93e260cae5c170e,
-        0xb0a7eae879ddb76d, // 119
-
-
-        0xd0762cbc8ca6570c,
-        0x34c6efb812b04bf5,
-        0x40bf0ab5fa14c112,
-        0xb6b570fc7c5740d3,
-        0x5a27b9002de33454,
-        0xb1a5b165b6d2b2d2,
-        0x8722e0ace9d1be22,
-        0x788ee3b37e5680fb,
-        0x14a726661551e284,
-        0x98b7672f9ef3b419, //129
-
-
-        0xbb93ae776bb30e3a,
-        0x28fd3b046380f850,
-        0x30a4680593258387,
-        0x337dc00c61bd9ce1,
-        0xd5eca244c7a4ff1d,
-        0x7762638264d279bd,
-        0xc1e434bedeefd767,
-        0x0299351a53b8ec22,
-        0xb2d456e4ad251b80,
-        0x3e9ed1fda49cea0b, // 139
-
-        0x2972a92ba450bed8,
-        0x20216dd77be493de,
-        0xadffe8cf28449ec6,
-        0x1c4dbb1c4c27d243,
-        0x15a16a8a8322d458,
-        0x388a128b7fd9a609,
-        0x2300e5d6baedf0fb,
-        0x2f63aa8647e15104,
-        0xf1c36ce86ecec269,
-        0x27181125183970c9, // 149
-
-
-        0xe584029370dca96d,
-        0x4d9bbc3e02f1cfb2,
-        0xea35bc29692af6f8,
-        0x18e21b4beabb4137,
-        0x1e3b9fc625b554f4,
-        0x25d64362697828fd,
-        0x5a3f1bb1c53a9645,
-        0xdb7f023869fb8d38,
-        0xb462065911d4e1fc,
-        0x49c24ae4437d8030, // 159
-
-        0xd793862c112b0566,
-        0xaadd1106730d8feb,
-        0xc43b6e0e97b0d568,
-        0xe29024c18ee6fca2,
-        0x5e50c27535b88c66,
-        0x10383f20a4ff9a87,
-        0x38e8ee9d71a45af8,
-        0xdd5118375bf1a9b9,
-        0x775005982d74d7f7,
-        0x86ab99b4dde6c8b0,
-        0xb1204f603f51c080,
-        0xef61ac8470250ecf,
-        0x1bbcd90f132c603f,
-        0x0cd1dabd964db557,
-        0x11a3ae5beb9d1ec9,
-        0xf755bfeea585d11d,
-        0xa3b83250268ea4d7,
-        0x516306f4927c93af,
-        0xddb4ac49c9efa1da,
-        0x64bb6dec369d4418,
-        0xf9cc95c22b4c1fcc,
-        0x08d37f755f4ae9f6,
-        0xeec49b613478675b,
-        0xf143933aed25e0b0,
-        0xe4c5dd8255dfc622,
-        0xe7ad7756f193198e,
-        0x92c2318b87fff9cb,
-        0x739c25f8fd73596d,
-        0x5636cac9f16dfed0,
-        0xdd8f909a938e0172,
-        0xc6401fe115063f5b,
-        0x8ad97b33f1ac1455,
-        0x0c49366bb25e8513,
-        0x0784d3d2f1698309,
-        0x530fb67ea1809a81,
-        0x410492299bb01f49,
-        0x139542347424b9ac,
-        0x9cb0bd5ea1a1115e,
-        0x02e3f615c38f49a1,
-        0x985d4f4a9c5291ef,
-        0x775b9feafdcd26e7,
-        0x304265a6384f0f2d,
-        0x593664c39773012c,
-        0x4f0a2e5fb028f2ce,
-        0xdd611f1000c17442,
-        0xd8185f9adfea4fd0,
-        0xef87139ca9a3ab1e,
-        0x3ba71336c34ee133,
-        0x7d3a455d56b70238,
-        0x660d32e130182684,
-        0x297a863f48cd1f43,
-        0x90e0a736a751ebb7,
-        0x549f80ce550c4fd3,
-        0x0f73b2922f38bd64,
-        0x16bf1f73fb7a9c3f,
-        0x6d1f5a59005bec17,
-        0x02ff876fa5ef97c4,
-        0xc5cb72a2a51159b0,
-        0x8470f39d2d5c900e,
-        0x25abb3f1d39fcb76,
-        0x23eb8cc9b372442f,
-        0xd687ba55c64f6364,
-        0xda8d9e90fd8ff158,
-        0xe3cbdc7d2fe45ea7,
-        0xb9a8c9b3aee52297,
-        0xc0d28a5c10960bd3,
-        0x45d7ac9b68f71a34,
-        0xeeb76e397069e804,
-        0x3d06c8bd1514e2d9,
-        0x9c9c98207cb10767,
-        0x65700b51aedfb5ef,
-        0x911f451539869408,
-        0x7ae6849fbc3a0ec6,
-        0x3bb340eba06afe7e,
-        0xb46e9d8b682ea65e,
-        0x8dcf22f9a3b34356,
-        0x77bdaeda586257a7,
-        0xf19e400a5104d20d,
-        0xc368a348e46d950f,
-        0x9ef1cd60e679f284,
-        0xe89cd854d5d01d33,
-        0x5cd377dc8bb882a2,
-        0xa7b0fb7883eee860,
-        0x7684403ec392950d,
-        0x5fa3f06f4fed3b52,
-        0x8df57ac11bc04831,
-        0x2db01efa1e1e1897,
-        0x54846de4aadb9ca2,
-        0xba6745385893c784,
-        0x541d496344d2c75b,
-        0xe909678474e687fe,
-        0xdfe89923f6c9c2ff,
-        0xece5a71e0cfedc75,
-        0x5ff98fd5d51fe610,
-        0x83e8941918964615,
-        0x5922040b47f150c1,
-        0xf97d750e3dd94521,
-        0x5080d4c2b86f56d7,
-        0xa7de115b56c78d70,
-        0x6a9242ac87538194,
-        0xf7856ef7f9173e44,
-        0x2265fc92feb0dc09,
-        0x17dfc8e4f7ba8a57,
-        0x9001a64209f21db8,
-        0x90004c1371b893c5,
-        0xb932b7cf752e5545,
-        0xa0b1df81b6fe59fc,
-        0x8ef1dd26770af2c2,
-        0x0541a4f9cfbeed35,
-        0x9e61106178bfc530,
-        0xb3767e80935d8af2,
-        0x0098d5782065af06,
-        0x31d191cd5c1466c7,
-        0x410fefafa319ac9d,
-        0xbdf8f242e316c4ab,
-        0x9e8cd55b57637ed0,
-        0xde122bebe9a39368,
-        0x4d001fd58f002526,
-        0xca6637000eb4a9f8,
-        0x2f2339d624f91f78,
-        0x6d1a7918c80df518,
-        0xdf9a4939342308e9,
-        0xebc2151ee6c8398c,
-        0x03cc2ba8a1116515,
-        0xd341d037e840cf83,
-        0x387cb5d25af4afcc,
-        0xbba2515f22909e87,
-        0x7248fe7705f38e47,
-        0x4d61e56a525d225a,
-        0x262e963c8da05d3d,
-        0x59e89b094d220ec2,
-        0x055d5b52b78b9c5e,
-        0x82b27eb33514ef99,
-        0xd30094ca96b7ce7b,
-        0xcf5cb381cd0a1535,
-        0xfeed4db6919e5a7c,
-        0x41703f53753be59f,
-        0x5eeea940fcde8b6f,
-        0x4cd1f1b175100206,
-        0x4a20358574454ec0,
-        0x1478d361dbbf9fac,
-        0x6f02dc07d141875c,
-        0x296a202ed8e556a2,
-        0x2afd67999bf32ee5,
-        0x7acfd96efa95491d,
-        0x6798ba0c0abb2c6d,
-        0x34c6f57b26c92122,
-        0x5736e1bad206b5de,
-        0x20057d2a0056521b,
-        0x3dea5bd5d0578bd7,
-        0x16e50d897d4634ac,
-        0x29bff3ecb9b7a6e3,
-        0x475cd3205a3bdcde,
-        0x18a42105c31b7e88,
-        0x023e7414af663068,
-        0x15147108121967d7,
-        0xe4a3dff1d7d6fef9,
-        0x01a8d1a588085737,
-        0x11b4c74eda62beef,
-        0xe587cc0d69a73346,
-        0x1ff7327017aa2a6e,
-        0x594e29c42473d06b,
-        0xf6f31db1899b12d5,
-        0xc02ac5e47312d3ca,
-        0xe70201e960cb78b8,
-        0x6f90ff3b6a65f108,
-        0x42747a7245e7fa84,
-        0xd1f507e43ab749b2,
-        0x1c86d265f15750cd,
-        0x3996ce73dd832c1c,
-        0x8e7fba02983224bd,
-        0xba0dec7103255dd4,
-        0x9e9cbd781628fc5b,
-        0xdae8645996edd6a5,
-        0xdebe0853b1a1d378,
-        0xa49229d24d014343,
-        0x7be5b9ffda905e1c,
-        0xa3c95eaec244aa30,
-        0x0230bca8f4df0544,
-        0x4135c2bebfe148c6,
-        0x166fc0cc438a3c72,
-        0x3762b59a8ae83efa,
-        0xe8928a4c89114750,
-        0x2a440b51a4945ee5,
-        0x80cefd2b7d99ff83,
-        0xbb9879c6e61fd62a,
-        0x6e7c8f1a84265034,
-        0x164bb2de1bbeddc8,
-        0xf3c12fe54d5c653b,
-        0x40b9e922ed9771e2,
-        0x551f5b0fbe7b1840,
-        0x25032aa7c4cb1811,
-        0xaaed34074b164346,
-        0x8ffd96bbf9c9c81d,
-        0x70fc91eb5937085c,
-        0x7f795e2a5f915440,
-        0x4543d9df5476d3cb,
-        0xf172d73e004fc90d,
-        0xdfd1c4febcc81238,
-        0xbc8dfb627fe558fc
-    ];
-
     function mod(uint256 a) internal pure returns (uint256 res) {
         assembly {
             res := mod(a, ORDER)
@@ -1399,6 +1007,7 @@ contract Poseidon {
             // new_state[11] = add(state[11], ALL_ROUND_CONSTANTS[base_index + 11]);
 
             // 最初442004
+            // mappingにしてみたら446484
             // 関数呼び出しするようになり、445437 (10こ)
             // 442652 (20こ)
             // 437567 (30こ)
@@ -1422,7 +1031,9 @@ contract Poseidon {
         }
     }
 
-    function _get_all_around_constants(uint256 index) private view returns (uint256 result) {
+    // TODO 最終的にpureにすること
+    // pureにした後、もう一度if文連結してみること
+    function _get_all_around_constants(uint256 index) private pure returns (uint256 result) {
         // if文を360繋げるとガスコストが50を境に高くなる。
         // なので、50区切り
         // 50 372812  21.631
@@ -1445,9 +1056,21 @@ contract Poseidon {
         // 20区切り
         // 20 410262
         // 40 377260
-        // 60 
-        // 80 
-        // 100 
+        // 60 364568
+        // 80 367592
+        // 100 370616
+        // 120 373640
+        // 140 376664 23.839 
+        // 160 379688 24.322
+        // 180 382712 24.805
+        // 200 385736
+        // 240 391784
+        // 260 394808
+        // 280 397832
+        // 300 400856
+        // 320 389868
+        // 340 354598
+        // 360 316828 29.213
         if (index >= 0 && index <= 19){
             if (index == 0) {
                 return 0xb585f766f2144405;
@@ -1534,295 +1157,695 @@ contract Poseidon {
                 return 0x6f6f2ed772466352;
             } 
             revert("illegal index");
-        } 
-
-
-
-
-
-        // else if (index >= 30 && index <= 59){
-        //     if (index == 30) {
-        //         return 0x502ad7dc18c2ad87;
-        //     } else if (index == 31) {
-        //         return 0x57a1550c110b3041;
-        //     } else if (index == 32) {
-        //         return 0x66bbd30e6ce0e583;
-        //     } else if (index == 33) {
-        //         return 0x0da2abef589d644e;
-        //     } else if (index == 34) {
-        //         return 0xf061274fdb150d61;
-        //     } else if (index == 35) {
-        //         return 0x28b8ec3ae9c29633;
-        //     } else if (index == 36) {
-        //         return 0x92a756e67e2b9413;
-        //     } else if (index == 37) {
-        //         return 0x70e741ebfee96586;
-        //     } else if (index == 38) {
-        //         return 0x019d5ee2af82ec1c;
-        //     } else if (index == 39) {
-        //         return 0x6f6f2ed772466352;
-        //     } else if (index == 40) {
-        //         return 0x7cf416cfe7e14ca1;
-        //     } else if (index == 41) {
-        //         return 0x61df517b86a46439;
-        //     } else if (index == 42) {
-        //         return 0x85dc499b11d77b75;
-        //     } else if (index == 43) {
-        //         return 0x4b959b48b9c10733;
-        //     } else if (index == 44) {
-        //         return 0xe8be3e5da8043e57;
-        //     } else if (index == 45) {
-        //         return 0xf5c0bc1de6da8699;
-        //     } else if (index == 46) {
-        //         return 0x40b12cbf09ef74bf;
-        //     } else if (index == 47) {
-        //         return 0xa637093ecb2ad631;
-        //     } else if (index == 48) {
-        //         return 0x3cc3f892184df408;
-        //     } else if (index == 49) {
-        //         return 0x2e479dc157bf31bb;
-        //     } else if (index == 50) {
-        //         return 0x6f49de07a6234346;
-        //     } else if (index == 51) {
-        //         return 0x213ce7bede378d7b;
-        //     } else if (index == 52) {
-        //         return 0x5b0431345d4dea83;
-        //     } else if (index == 53) {
-        //         return 0xa2de45780344d6a1;
-        //     } else if (index == 54) {
-        //         return 0x7103aaf94a7bf308;
-        //     } else if (index == 55) {
-        //         return 0x5326fc0d97279301;
-        //     } else if (index == 56) {
-        //         return 0xa9ceb74fec024747;
-        //     } else if (index == 57) {
-        //         return 0x27f8ec88bb21b1a3;
-        //     } else if (index == 58) {
-        //         return 0xfceb4fda1ded0893;
-        //     } else if (index == 59) {
-        //         return 0xfac6ff1346a41675;
-        //     }
-        //     revert("illegal index");
-        // } 
-        // else if (index >= 60 && index <= 89){
-        //     if (index == 60) {
-        //         return 0x7131aa45268d7d8c;
-        //     } else if (index == 61) {
-        //         return 0x9351036095630f9f;
-        //     } else if (index == 62) {
-        //         return 0xad535b24afc26bfb;
-        //     } else if (index == 63) {
-        //         return 0x4627f5c6993e44be;
-        //     } else if (index == 64) {
-        //         return 0x645cf794b8f1cc58;
-        //     } else if (index == 65) {
-        //         return 0x241c70ed0af61617;
-        //     } else if (index == 66) {
-        //         return 0xacb8e076647905f1;
-        //     } else if (index == 67) {
-        //         return 0x3737e9db4c4f474d;
-        //     } else if (index == 68) {
-        //         return 0xe7ea5e33e75fffb6;
-        //     } else if (index == 69) {
-        //         return 0x90dee49fc9bfc23a;
-        //     } else if (index == 70) {
-        //         return 0xd1b1edf76bc09c92;
-        //     } else if (index == 71) {
-        //         return 0x0b65481ba645c602;
-        //     } else if (index == 72) {
-        //         return 0x99ad1aab0814283b;
-        //     } else if (index == 73) {
-        //         return 0x438a7c91d416ca4d;
-        //     } else if (index == 74) {
-        //         return 0xb60de3bcc5ea751c;
-        //     } else if (index == 75) {
-        //         return 0xc99cab6aef6f58bc;
-        //     } else if (index == 76) {
-        //         return 0x69a5ed92a72ee4ff;
-        //     } else if (index == 77) {
-        //         return 0x5e7b329c1ed4ad71;
-        //     } else if (index == 78) {
-        //         return 0x5fc0ac0800144885;
-        //     } else if (index == 79) {
-        //         return 0x32db829239774eca;
-        //     } else if (index == 80) {
-        //         return 0x0ade699c5830f310;
-        //     } else if (index == 81) {
-        //         return 0x7cc5583b10415f21;
-        //     } else if (index == 82) {
-        //         return 0x85df9ed2e166d64f;
-        //     } else if (index == 83) {
-        //         return 0x6604df4fee32bcb1;
-        //     } else if (index == 84) {
-        //         return 0xeb84f608da56ef48;
-        //     } else if (index == 85) {
-        //         return 0xda608834c40e603d;
-        //     } else if (index == 86) {
-        //         return 0x8f97fe408061f183;
-        //     } else if (index == 87) {
-        //         return 0xa93f485c96f37b89;
-        //     } else if (index == 88) {
-        //         return 0x6704e8ee8f18d563;
-        //     } else if (index == 89) {
-        //         return 0xcee3e9ac1e072119;
-        //     }
-        //     revert("illegal index");
-        // }
-        
-        //  else if (index >= 90 && index <= 119){
-        //     if (index == 90) {
-        //         return 0x510d0e65e2b470c1;
-        //     } else if (index == 91) {
-        //         return 0xf6323f486b9038f0;
-        //     } else if (index == 92) {
-        //         return 0x0b508cdeffa5ceef;
-        //     } else if (index == 93) {
-        //         return 0xf2417089e4fb3cbd;
-        //     } else if (index == 94) {
-        //         return 0x60e75c2890d15730;
-        //     } else if (index == 95) {
-        //         return 0xa6217d8bf660f29c;
-        //     } else if (index == 96) {
-        //         return 0x7159cd30c3ac118e;
-        //     } else if (index == 97) {
-        //         return 0x839b4e8fafead540;
-        //     } else if (index == 98) {
-        //         return 0x0d3f3e5e82920adc;
-        //     } else if (index == 99) {
-        //         return 0x8f7d83bddee7bba8;
-        //     } else if (index == 100) {
-        //         return 0x780f2243ea071d06;
-        //     } else if (index == 101) {
-        //         return 0xeb915845f3de1634;
-        //     } else if (index == 102) {
-        //         return 0xd19e120d26b6f386;
-        //     } else if (index == 103) {
-        //         return 0x016ee53a7e5fecc6;
-        //     } else if (index == 104) {
-        //         return 0xcb5fd54e7933e477;
-        //     } else if (index == 105) {
-        //         return 0xacb8417879fd449f;
-        //     } else if (index == 106) {
-        //         return 0x9c22190be7f74732;
-        //     } else if (index == 107) {
-        //         return 0x5d693c1ba3ba3621;
-        //     } else if (index == 108) {
-        //         return 0xdcef0797c2b69ec7;
-        //     } else if (index == 109) {
-        //         return 0x3d639263da827b13;
-        //     } else if (index == 110) {
-        //         return 0xe273fd971bc8d0e7;
-        //     } else if (index == 111) {
-        //         return 0x418f02702d227ed5;
-        //     } else if (index == 112) {
-        //         return 0x8c25fda3b503038c;
-        //     } else if (index == 113) {
-        //         return 0x2cbaed4daec8c07c;
-        //     } else if (index == 114) {
-        //         return 0x5f58e6afcdd6ddc2;
-        //     } else if (index == 115) {
-        //         return 0x284650ac5e1b0eba;
-        //     } else if (index == 116) {
-        //         return 0x635b337ee819dab5;
-        //     } else if (index == 117) {
-        //         return 0x9f9a036ed4f2d49f;
-        //     } else if (index == 118) {
-        //         return 0xb93e260cae5c170e;
-        //     } else if (index == 119) {
-        //         return 0xb0a7eae879ddb76d;
-        //     }
-        //     revert("illegal index");
-        // } 
-        
-        // else if (index >= 120 && index <= 149){
-        //     if (index == 120) {
-        //         return 0xd0762cbc8ca6570c;
-        //     } else if (index == 121) {
-        //         return 0x34c6efb812b04bf5;
-        //     } else if (index == 122) {
-        //         return 0x40bf0ab5fa14c112;
-        //     } else if (index == 123) {
-        //         return 0xb6b570fc7c5740d3;
-        //     } else if (index == 124) {
-        //         return 0x5a27b9002de33454;
-        //     } else if (index == 125) {
-        //         return 0xb1a5b165b6d2b2d2;
-        //     } else if (index == 126) {
-        //         return 0x8722e0ace9d1be22;
-        //     } else if (index == 127) {
-        //         return 0x788ee3b37e5680fb;
-        //     } else if (index == 128) {
-        //         return 0x14a726661551e284;
-        //     } else if (index == 129) {
-        //         return 0x98b7672f9ef3b419;
-        //     } else if (index == 130) {
-        //         return 0xbb93ae776bb30e3a;
-        //     } else if (index == 131) {
-        //         return 0x28fd3b046380f850;
-        //     } else if (index == 132) {
-        //         return 0x30a4680593258387;
-        //     } else if (index == 133) {
-        //         return 0x337dc00c61bd9ce1;
-        //     } else if (index == 134) {
-        //         return 0xd5eca244c7a4ff1d;
-        //     } else if (index == 135) {
-        //         return 0x7762638264d279bd;
-        //     } else if (index == 136) {
-        //         return 0xc1e434bedeefd767;
-        //     } else if (index == 137) {
-        //         return 0x0299351a53b8ec22;
-        //     } else if (index == 138) {
-        //         return 0xb2d456e4ad251b80;
-        //     } else if (index == 139) {
-        //         return 0x3e9ed1fda49cea0b;
-        //     } else if (index == 140) {
-        //         return 0x2972a92ba450bed8;
-        //     } else if (index == 141) {
-        //         return 0x20216dd77be493de;
-        //     } else if (index == 142) {
-        //         return 0xadffe8cf28449ec6;
-        //     } else if (index == 143) {
-        //         return 0x1c4dbb1c4c27d243;
-        //     } else if (index == 144) {
-        //         return 0x15a16a8a8322d458;
-        //     } else if (index == 145) {
-        //         return 0x388a128b7fd9a609;
-        //     } else if (index == 146) {
-        //         return 0x2300e5d6baedf0fb;
-        //     } else if (index == 147) {
-        //         return 0x2f63aa8647e15104;
-        //     } else if (index == 148) {
-        //         return 0xf1c36ce86ecec269;
-        //     } else if (index == 149) {
-        //         return 0x27181125183970c9;
-        //     } 
-        //     revert("illegal index");
-        // }
-
-
-
-// else if (index == 150) {
-//                 return 0xe584029370dca96d;
-//             } else if (index == 151) {
-//                 return 0x4d9bbc3e02f1cfb2;
-//             } else if (index == 152) {
-//                 return 0xea35bc29692af6f8;
-//             } else if (index == 153) {
-//                 return 0x18e21b4beabb4137;
-//             } else if (index == 154) {
-//                 return 0x1e3b9fc625b554f4;
-//             } else if (index == 155) {
-//                 return 0x25d64362697828fd;
-//             } else if (index == 156) {
-//                 return 0x5a3f1bb1c53a9645;
-//             } else if (index == 157) {
-//                 return 0xdb7f023869fb8d38;
-//             } else if (index == 158) {
-//                 return 0xb462065911d4e1fc;
-//             } else if (index == 159) {
-//                 return 0x49c24ae4437d8030;
-//             }
-        return ALL_ROUND_CONSTANTS[index];
+        } else if (index >= 40 && index <= 59){
+            if (index == 40) {
+                return 0x7cf416cfe7e14ca1;
+            } else if (index == 41) {
+                return 0x61df517b86a46439;
+            } else if (index == 42) {
+                return 0x85dc499b11d77b75;
+            } else if (index == 43) {
+                return 0x4b959b48b9c10733;
+            } else if (index == 44) {
+                return 0xe8be3e5da8043e57;
+            } else if (index == 45) {
+                return 0xf5c0bc1de6da8699;
+            } else if (index == 46) {
+                return 0x40b12cbf09ef74bf;
+            } else if (index == 47) {
+                return 0xa637093ecb2ad631;
+            } else if (index == 48) {
+                return 0x3cc3f892184df408;
+            } else if (index == 49) {
+                return 0x2e479dc157bf31bb;
+            } else if (index == 50) {
+                return 0x6f49de07a6234346;
+            } else if (index == 51) {
+                return 0x213ce7bede378d7b;
+            } else if (index == 52) {
+                return 0x5b0431345d4dea83;
+            } else if (index == 53) {
+                return 0xa2de45780344d6a1;
+            } else if (index == 54) {
+                return 0x7103aaf94a7bf308;
+            } else if (index == 55) {
+                return 0x5326fc0d97279301;
+            } else if (index == 56) {
+                return 0xa9ceb74fec024747;
+            } else if (index == 57) {
+                return 0x27f8ec88bb21b1a3;
+            } else if (index == 58) {
+                return 0xfceb4fda1ded0893;
+            } else if (index == 59) {
+                return 0xfac6ff1346a41675;
+            }
+            revert("illegal index");
+        } else if (index >= 60 && index <= 79){
+            if (index == 60) {
+                return 0x7131aa45268d7d8c;
+            } else if (index == 61) {
+                return 0x9351036095630f9f;
+            } else if (index == 62) {
+                return 0xad535b24afc26bfb;
+            } else if (index == 63) {
+                return 0x4627f5c6993e44be;
+            } else if (index == 64) {
+                return 0x645cf794b8f1cc58;
+            } else if (index == 65) {
+                return 0x241c70ed0af61617;
+            } else if (index == 66) {
+                return 0xacb8e076647905f1;
+            } else if (index == 67) {
+                return 0x3737e9db4c4f474d;
+            } else if (index == 68) {
+                return 0xe7ea5e33e75fffb6;
+            } else if (index == 69) {
+                return 0x90dee49fc9bfc23a;
+            } else if (index == 70) {
+                return 0xd1b1edf76bc09c92;
+            } else if (index == 71) {
+                return 0x0b65481ba645c602;
+            } else if (index == 72) {
+                return 0x99ad1aab0814283b;
+            } else if (index == 73) {
+                return 0x438a7c91d416ca4d;
+            } else if (index == 74) {
+                return 0xb60de3bcc5ea751c;
+            } else if (index == 75) {
+                return 0xc99cab6aef6f58bc;
+            } else if (index == 76) {
+                return 0x69a5ed92a72ee4ff;
+            } else if (index == 77) {
+                return 0x5e7b329c1ed4ad71;
+            } else if (index == 78) {
+                return 0x5fc0ac0800144885;
+            } else if (index == 79) {
+                return 0x32db829239774eca;
+            }
+            revert("illegal index");
+        } else if (index >= 80 && index <= 99){
+            if (index == 80) {
+                return 0x0ade699c5830f310;
+            } else if (index == 81) {
+                return 0x7cc5583b10415f21;
+            } else if (index == 82) {
+                return 0x85df9ed2e166d64f;
+            } else if (index == 83) {
+                return 0x6604df4fee32bcb1;
+            } else if (index == 84) {
+                return 0xeb84f608da56ef48;
+            } else if (index == 85) {
+                return 0xda608834c40e603d;
+            } else if (index == 86) {
+                return 0x8f97fe408061f183;
+            } else if (index == 87) {
+                return 0xa93f485c96f37b89;
+            } else if (index == 88) {
+                return 0x6704e8ee8f18d563;
+            } else if (index == 89) {
+                return 0xcee3e9ac1e072119;
+            } else if (index == 90) {
+                return 0x510d0e65e2b470c1;
+            } else if (index == 91) {
+                return 0xf6323f486b9038f0;
+            } else if (index == 92) {
+                return 0x0b508cdeffa5ceef;
+            } else if (index == 93) {
+                return 0xf2417089e4fb3cbd;
+            } else if (index == 94) {
+                return 0x60e75c2890d15730;
+            } else if (index == 95) {
+                return 0xa6217d8bf660f29c;
+            } else if (index == 96) {
+                return 0x7159cd30c3ac118e;
+            } else if (index == 97) {
+                return 0x839b4e8fafead540;
+            } else if (index == 98) {
+                return 0x0d3f3e5e82920adc;
+            } else if (index == 99) {
+                return 0x8f7d83bddee7bba8;
+            }
+            revert("illegal index");
+        } else if (index >= 100 && index <= 119){
+            if (index == 100) {
+                return 0x780f2243ea071d06;
+            } else if (index == 101) {
+                return 0xeb915845f3de1634;
+            } else if (index == 102) {
+                return 0xd19e120d26b6f386;
+            } else if (index == 103) {
+                return 0x016ee53a7e5fecc6;
+            } else if (index == 104) {
+                return 0xcb5fd54e7933e477;
+            } else if (index == 105) {
+                return 0xacb8417879fd449f;
+            } else if (index == 106) {
+                return 0x9c22190be7f74732;
+            } else if (index == 107) {
+                return 0x5d693c1ba3ba3621;
+            } else if (index == 108) {
+                return 0xdcef0797c2b69ec7;
+            } else if (index == 109) {
+                return 0x3d639263da827b13;
+            } else if (index == 110) {
+                return 0xe273fd971bc8d0e7;
+            } else if (index == 111) {
+                return 0x418f02702d227ed5;
+            } else if (index == 112) {
+                return 0x8c25fda3b503038c;
+            } else if (index == 113) {
+                return 0x2cbaed4daec8c07c;
+            } else if (index == 114) {
+                return 0x5f58e6afcdd6ddc2;
+            } else if (index == 115) {
+                return 0x284650ac5e1b0eba;
+            } else if (index == 116) {
+                return 0x635b337ee819dab5;
+            } else if (index == 117) {
+                return 0x9f9a036ed4f2d49f;
+            } else if (index == 118) {
+                return 0xb93e260cae5c170e;
+            } else if (index == 119) {
+                return 0xb0a7eae879ddb76d;
+            }
+            revert("illegal index");
+        } else if (index >= 120 && index <= 139){
+            if (index == 120) {
+                return 0xd0762cbc8ca6570c;
+            } else if (index == 121) {
+                return 0x34c6efb812b04bf5;
+            } else if (index == 122) {
+                return 0x40bf0ab5fa14c112;
+            } else if (index == 123) {
+                return 0xb6b570fc7c5740d3;
+            } else if (index == 124) {
+                return 0x5a27b9002de33454;
+            } else if (index == 125) {
+                return 0xb1a5b165b6d2b2d2;
+            } else if (index == 126) {
+                return 0x8722e0ace9d1be22;
+            } else if (index == 127) {
+                return 0x788ee3b37e5680fb;
+            } else if (index == 128) {
+                return 0x14a726661551e284;
+            } else if (index == 129) {
+                return 0x98b7672f9ef3b419;
+            } else if (index == 130) {
+                return 0xbb93ae776bb30e3a;
+            } else if (index == 131) {
+                return 0x28fd3b046380f850;
+            } else if (index == 132) {
+                return 0x30a4680593258387;
+            } else if (index == 133) {
+                return 0x337dc00c61bd9ce1;
+            } else if (index == 134) {
+                return 0xd5eca244c7a4ff1d;
+            } else if (index == 135) {
+                return 0x7762638264d279bd;
+            } else if (index == 136) {
+                return 0xc1e434bedeefd767;
+            } else if (index == 137) {
+                return 0x0299351a53b8ec22;
+            } else if (index == 138) {
+                return 0xb2d456e4ad251b80;
+            } else if (index == 139) {
+                return 0x3e9ed1fda49cea0b;
+            } 
+            revert("illegal index");
+        } else if (index >= 140 && index <= 159){
+            if (index == 140) {
+                return 0x2972a92ba450bed8;
+            } else if (index == 141) {
+                return 0x20216dd77be493de;
+            } else if (index == 142) {
+                return 0xadffe8cf28449ec6;
+            } else if (index == 143) {
+                return 0x1c4dbb1c4c27d243;
+            } else if (index == 144) {
+                return 0x15a16a8a8322d458;
+            } else if (index == 145) {
+                return 0x388a128b7fd9a609;
+            } else if (index == 146) {
+                return 0x2300e5d6baedf0fb;
+            } else if (index == 147) {
+                return 0x2f63aa8647e15104;
+            } else if (index == 148) {
+                return 0xf1c36ce86ecec269;
+            } else if (index == 149) {
+                return 0x27181125183970c9;
+            } else if (index == 150) {
+                return 0xe584029370dca96d;
+            } else if (index == 151) {
+                return 0x4d9bbc3e02f1cfb2;
+            } else if (index == 152) {
+                return 0xea35bc29692af6f8;
+            } else if (index == 153) {
+                return 0x18e21b4beabb4137;
+            } else if (index == 154) {
+                return 0x1e3b9fc625b554f4;
+            } else if (index == 155) {
+                return 0x25d64362697828fd;
+            } else if (index == 156) {
+                return 0x5a3f1bb1c53a9645;
+            } else if (index == 157) {
+                return 0xdb7f023869fb8d38;
+            } else if (index == 158) {
+                return 0xb462065911d4e1fc;
+            } else if (index == 159) {
+                return 0x49c24ae4437d8030;
+            }
+            revert("illegal index");
+        } else if (index >= 160 && index <= 179){
+            if (index == 160) {
+                return 0xd793862c112b0566;
+            } else if (index == 161) {
+                return 0xaadd1106730d8feb;
+            } else if (index == 162) {
+                return 0xc43b6e0e97b0d568;
+            } else if (index == 163) {
+                return 0xe29024c18ee6fca2;
+            } else if (index == 164) {
+                return 0x5e50c27535b88c66;
+            } else if (index == 165) {
+                return 0x10383f20a4ff9a87;
+            } else if (index == 166) {
+                return 0x38e8ee9d71a45af8;
+            } else if (index == 167) {
+                return 0xdd5118375bf1a9b9;
+            } else if (index == 168) {
+                return 0x775005982d74d7f7;
+            } else if (index == 169) {
+                return 0x86ab99b4dde6c8b0;
+            } else if (index == 170) {
+                return 0xb1204f603f51c080;
+            } else if (index == 171) {
+                return 0xef61ac8470250ecf;
+            } else if (index == 172) {
+                return 0x1bbcd90f132c603f;
+            } else if (index == 173) {
+                return 0x0cd1dabd964db557;
+            } else if (index == 174) {
+                return 0x11a3ae5beb9d1ec9;
+            } else if (index == 175) {
+                return 0xf755bfeea585d11d;
+            } else if (index == 176) {
+                return 0xa3b83250268ea4d7;
+            } else if (index == 177) {
+                return 0x516306f4927c93af;
+            } else if (index == 178) {
+                return 0xddb4ac49c9efa1da;
+            } else if (index == 179) {
+                return 0x64bb6dec369d4418;
+            }
+            revert("illegal index");
+        } else if (index >= 180 && index <= 199){
+            if (index == 180) {
+                return 0xf9cc95c22b4c1fcc;
+            } else if (index == 181) {
+                return 0x08d37f755f4ae9f6;
+            } else if (index == 182) {
+                return 0xeec49b613478675b;
+            } else if (index == 183) {
+                return 0xf143933aed25e0b0;
+            } else if (index == 184) {
+                return 0xe4c5dd8255dfc622;
+            } else if (index == 185) {
+                return 0xe7ad7756f193198e;
+            } else if (index == 186) {
+                return 0x92c2318b87fff9cb;
+            } else if (index == 187) {
+                return 0x739c25f8fd73596d;
+            } else if (index == 188) {
+                return 0x5636cac9f16dfed0;
+            } else if (index == 189) {
+                return 0xdd8f909a938e0172;
+            } else if (index == 190) {
+                return 0xc6401fe115063f5b;
+            } else if (index == 191) {
+                return 0x8ad97b33f1ac1455;
+            } else if (index == 192) {
+                return 0x0c49366bb25e8513;
+            } else if (index == 193) {
+                return 0x0784d3d2f1698309;
+            } else if (index == 194) {
+                return 0x530fb67ea1809a81;
+            } else if (index == 195) {
+                return 0x410492299bb01f49;
+            } else if (index == 196) {
+                return 0x139542347424b9ac;
+            } else if (index == 197) {
+                return 0x9cb0bd5ea1a1115e;
+            } else if (index == 198) {
+                return 0x02e3f615c38f49a1;
+            } else if (index == 199) {
+                return 0x985d4f4a9c5291ef;
+            }
+            revert("illegal index");
+        } else if (index >= 200 && index <= 219){
+            if (index == 200) {
+                return 0x775b9feafdcd26e7;
+            } else if (index == 201) {
+                return 0x304265a6384f0f2d;
+            } else if (index == 202) {
+                return 0x593664c39773012c;
+            } else if (index == 203) {
+                return 0x4f0a2e5fb028f2ce;
+            } else if (index == 204) {
+                return 0xdd611f1000c17442;
+            } else if (index == 205) {
+                return 0xd8185f9adfea4fd0;
+            } else if (index == 206) {
+                return 0xef87139ca9a3ab1e;
+            } else if (index == 207) {
+                return 0x3ba71336c34ee133;
+            } else if (index == 208) {
+                return 0x7d3a455d56b70238;
+            } else if (index == 209) {
+                return 0x660d32e130182684;
+            } else if (index == 210) {
+                return 0x297a863f48cd1f43;
+            } else if (index == 211) {
+                return 0x90e0a736a751ebb7;
+            } else if (index == 212) {
+                return 0x549f80ce550c4fd3;
+            } else if (index == 213) {
+                return 0x0f73b2922f38bd64;
+            } else if (index == 214) {
+                return 0x16bf1f73fb7a9c3f;
+            } else if (index == 215) {
+                return 0x6d1f5a59005bec17;
+            } else if (index == 216) {
+                return 0x02ff876fa5ef97c4;
+            } else if (index == 217) {
+                return 0xc5cb72a2a51159b0;
+            } else if (index == 218) {
+                return 0x8470f39d2d5c900e;
+            } else if (index == 219) {
+                return 0x25abb3f1d39fcb76;
+            }
+            revert("illegal index");
+        } else if (index >= 220 && index <= 239){
+            if (index == 220) {
+                return 0x23eb8cc9b372442f;
+            } else if (index == 221) {
+                return 0xd687ba55c64f6364;
+            } else if (index == 222) {
+                return 0xda8d9e90fd8ff158;
+            } else if (index == 223) {
+                return 0xe3cbdc7d2fe45ea7;
+            } else if (index == 224) {
+                return 0xb9a8c9b3aee52297;
+            } else if (index == 225) {
+                return 0xc0d28a5c10960bd3;
+            } else if (index == 226) {
+                return 0x45d7ac9b68f71a34;
+            } else if (index == 227) {
+                return 0xeeb76e397069e804;
+            } else if (index == 228) {
+                return 0x3d06c8bd1514e2d9;
+            } else if (index == 229) {
+                return 0x9c9c98207cb10767;
+            } else if (index == 230) {
+                return 0x65700b51aedfb5ef;
+            } else if (index == 231) {
+                return 0x911f451539869408;
+            } else if (index == 232) {
+                return 0x7ae6849fbc3a0ec6;
+            } else if (index == 233) {
+                return 0x3bb340eba06afe7e;
+            } else if (index == 234) {
+                return 0xb46e9d8b682ea65e;
+            } else if (index == 235) {
+                return 0x8dcf22f9a3b34356;
+            } else if (index == 236) {
+                return 0x77bdaeda586257a7;
+            } else if (index == 237) {
+                return 0xf19e400a5104d20d;
+            } else if (index == 238) {
+                return 0xc368a348e46d950f;
+            } else if (index == 239) {
+                return 0x9ef1cd60e679f284;
+            }
+            revert("illegal index");
+        } else if (index >= 240 && index <= 259){
+            if (index == 240) {
+                return 0xe89cd854d5d01d33;
+            } else if (index == 241) {
+                return 0x5cd377dc8bb882a2;
+            } else if (index == 242) {
+                return 0xa7b0fb7883eee860;
+            } else if (index == 243) {
+                return 0x7684403ec392950d;
+            } else if (index == 244) {
+                return 0x5fa3f06f4fed3b52;
+            } else if (index == 245) {
+                return 0x8df57ac11bc04831;
+            } else if (index == 246) {
+                return 0x2db01efa1e1e1897;
+            } else if (index == 247) {
+                return 0x54846de4aadb9ca2;
+            } else if (index == 248) {
+                return 0xba6745385893c784;
+            } else if (index == 249) {
+                return 0x541d496344d2c75b;
+            } else if (index == 250) {
+                return 0xe909678474e687fe;
+            } else if (index == 251) {
+                return 0xdfe89923f6c9c2ff;
+            } else if (index == 252) {
+                return 0xece5a71e0cfedc75;
+            } else if (index == 253) {
+                return 0x5ff98fd5d51fe610;
+            } else if (index == 254) {
+                return 0x83e8941918964615;
+            } else if (index == 255) {
+                return 0x5922040b47f150c1;
+            } else if (index == 256) {
+                return 0xf97d750e3dd94521;
+            } else if (index == 257) {
+                return 0x5080d4c2b86f56d7;
+            } else if (index == 258) {
+                return 0xa7de115b56c78d70;
+            } else if (index == 259) {
+                return 0x6a9242ac87538194;
+            }
+            revert("illegal index");
+        } else if (index >= 260 && index <= 279){
+            if (index == 260) {
+                return 0xf7856ef7f9173e44;
+            } else if (index == 261) {
+                return 0x2265fc92feb0dc09;
+            } else if (index == 262) {
+                return 0x17dfc8e4f7ba8a57;
+            } else if (index == 263) {
+                return 0x9001a64209f21db8;
+            } else if (index == 264) {
+                return 0x90004c1371b893c5;
+            } else if (index == 265) {
+                return 0xb932b7cf752e5545;
+            } else if (index == 266) {
+                return 0xa0b1df81b6fe59fc;
+            } else if (index == 267) {
+                return 0x8ef1dd26770af2c2;
+            } else if (index == 268) {
+                return 0x0541a4f9cfbeed35;
+            } else if (index == 269) {
+                return 0x9e61106178bfc530;
+            } else if (index == 270) {
+                return 0xb3767e80935d8af2;
+            } else if (index == 271) {
+                return 0x0098d5782065af06;
+            } else if (index == 272) {
+                return 0x31d191cd5c1466c7;
+            } else if (index == 273) {
+                return 0x410fefafa319ac9d;
+            } else if (index == 274) {
+                return 0xbdf8f242e316c4ab;
+            } else if (index == 275) {
+                return 0x9e8cd55b57637ed0;
+            } else if (index == 276) {
+                return 0xde122bebe9a39368;
+            } else if (index == 277) {
+                return 0x4d001fd58f002526;
+            } else if (index == 278) {
+                return 0xca6637000eb4a9f8;
+            } else if (index == 279) {
+                return 0x2f2339d624f91f78;
+            }
+            revert("illegal index");
+        } else if (index >= 280 && index <= 299){
+            if (index == 280) {
+                return 0x6d1a7918c80df518;
+            } else if (index == 281) {
+                return 0xdf9a4939342308e9;
+            } else if (index == 282) {
+                return 0xebc2151ee6c8398c;
+            } else if (index == 283) {
+                return 0x03cc2ba8a1116515;
+            } else if (index == 284) {
+                return 0xd341d037e840cf83;
+            } else if (index == 285) {
+                return 0x387cb5d25af4afcc;
+            } else if (index == 286) {
+                return 0xbba2515f22909e87;
+            } else if (index == 287) {
+                return 0x7248fe7705f38e47;
+            } else if (index == 288) {
+                return 0x4d61e56a525d225a;
+            } else if (index == 289) {
+                return 0x262e963c8da05d3d;
+            } else if (index == 290) {
+                return 0x59e89b094d220ec2;
+            } else if (index == 291) {
+                return 0x055d5b52b78b9c5e;
+            } else if (index == 292) {
+                return 0x82b27eb33514ef99;
+            } else if (index == 293) {
+                return 0xd30094ca96b7ce7b;
+            } else if (index == 294) {
+                return 0xcf5cb381cd0a1535;
+            } else if (index == 295) {
+                return 0xfeed4db6919e5a7c;
+            } else if (index == 296) {
+                return 0x41703f53753be59f;
+            } else if (index == 297) {
+                return 0x5eeea940fcde8b6f;
+            } else if (index == 298) {
+                return 0x4cd1f1b175100206;
+            } else if (index == 299) {
+                return 0x4a20358574454ec0;
+            }
+            revert("illegal index");
+        } else if (index >= 300 && index <= 319){
+            if (index == 300) {
+                return 0x1478d361dbbf9fac;
+            } else if (index == 301) {
+                return 0x6f02dc07d141875c;
+            } else if (index == 302) {
+                return 0x296a202ed8e556a2;
+            } else if (index == 303) {
+                return 0x2afd67999bf32ee5;
+            } else if (index == 304) {
+                return 0x7acfd96efa95491d;
+            } else if (index == 305) {
+                return 0x6798ba0c0abb2c6d;
+            } else if (index == 306) {
+                return 0x34c6f57b26c92122;
+            } else if (index == 307) {
+                return 0x5736e1bad206b5de;
+            } else if (index == 308) {
+                return 0x20057d2a0056521b;
+            } else if (index == 309) {
+                return 0x3dea5bd5d0578bd7;
+            } else if (index == 310) {
+                return 0x16e50d897d4634ac;
+            } else if (index == 311) {
+                return 0x29bff3ecb9b7a6e3;
+            } else if (index == 312) {
+                return 0x475cd3205a3bdcde;
+            } else if (index == 313) {
+                return 0x18a42105c31b7e88;
+            } else if (index == 314) {
+                return 0x023e7414af663068;
+            } else if (index == 315) {
+                return 0x15147108121967d7;
+            } else if (index == 316) {
+                return 0xe4a3dff1d7d6fef9;
+            } else if (index == 317) {
+                return 0x01a8d1a588085737;
+            } else if (index == 318) {
+                return 0x11b4c74eda62beef;
+            } else if (index == 319) {
+                return 0xe587cc0d69a73346;
+            }
+            revert("illegal index");
+        } else if (index >= 320 && index <= 339){
+            if (index == 320) {
+                return 0x1ff7327017aa2a6e;
+            } else if (index == 321) {
+                return 0x594e29c42473d06b;
+            } else if (index == 322) {
+                return 0xf6f31db1899b12d5;
+            } else if (index == 323) {
+                return 0xc02ac5e47312d3ca;
+            } else if (index == 324) {
+                return 0xe70201e960cb78b8;
+            } else if (index == 325) {
+                return 0x6f90ff3b6a65f108;
+            } else if (index == 326) {
+                return 0x42747a7245e7fa84;
+            } else if (index == 327) {
+                return 0xd1f507e43ab749b2;
+            } else if (index == 328) {
+                return 0x1c86d265f15750cd;
+            } else if (index == 329) {
+                return 0x3996ce73dd832c1c;
+            } else if (index == 330) {
+                return 0x8e7fba02983224bd;
+            } else if (index == 331) {
+                return 0xba0dec7103255dd4;
+            } else if (index == 332) {
+                return 0x9e9cbd781628fc5b;
+            } else if (index == 333) {
+                return 0xdae8645996edd6a5;
+            } else if (index == 334) {
+                return 0xdebe0853b1a1d378;
+            } else if (index == 335) {
+                return 0xa49229d24d014343;
+            } else if (index == 336) {
+                return 0x7be5b9ffda905e1c;
+            } else if (index == 337) {
+                return 0xa3c95eaec244aa30;
+            } else if (index == 338) {
+                return 0x0230bca8f4df0544;
+            } else if (index == 339) {
+                return 0x4135c2bebfe148c6;
+            }
+            revert("illegal index");
+        } else {
+            if (index == 340) {
+                return 0x166fc0cc438a3c72;
+            } else if (index == 341) {
+                return 0x3762b59a8ae83efa;
+            } else if (index == 342) {
+                return 0xe8928a4c89114750;
+            } else if (index == 343) {
+                return 0x2a440b51a4945ee5;
+            } else if (index == 344) {
+                return 0x80cefd2b7d99ff83;
+            } else if (index == 345) {
+                return 0xbb9879c6e61fd62a;
+            } else if (index == 346) {
+                return 0x6e7c8f1a84265034;
+            } else if (index == 347) {
+                return 0x164bb2de1bbeddc8;
+            } else if (index == 348) {
+                return 0xf3c12fe54d5c653b;
+            } else if (index == 349) {
+                return 0x40b9e922ed9771e2;
+            } else if (index == 350) {
+                return 0x551f5b0fbe7b1840;
+            } else if (index == 351) {
+                return 0x25032aa7c4cb1811;
+            } else if (index == 352) {
+                return 0xaaed34074b164346;
+            } else if (index == 353) {
+                return 0x8ffd96bbf9c9c81d;
+            } else if (index == 354) {
+                return 0x70fc91eb5937085c;
+            } else if (index == 355) {
+                return 0x7f795e2a5f915440;
+            } else if (index == 356) {
+                return 0x4543d9df5476d3cb;
+            } else if (index == 357) {
+                return 0xf172d73e004fc90d;
+            } else if (index == 358) {
+                return 0xdfd1c4febcc81238;
+            } else if (index == 359) {
+                return 0xbc8dfb627fe558fc;
+            }
+        }
+        revert("illegal index");
     }
 
 
